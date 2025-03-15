@@ -2,8 +2,6 @@ class_name CastlePlot extends Plot
 
 @onready var progress: TextureProgressBar = $progress
 
-@export var icon: Texture
-
 var coin_speed: int = 1
 var coin_val: int = 1
 var click_strength: int = 100

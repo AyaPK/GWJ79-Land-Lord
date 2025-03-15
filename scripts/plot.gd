@@ -3,6 +3,8 @@ class_name Plot extends Area2D
 var grid_position: Vector2
 var hovered: bool = false
 
+@export var icon: Texture
+
 func _ready() -> void:
 	$HoverRect.hide()
 

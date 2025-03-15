@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpudofkyte5ai"]
+
+[ext_resource type="Texture2D" uid="uid://yh3mub4ae71d" path="res://art/menuRect.png" id="1_jmh8f"]
+[ext_resource type="Script" uid="uid://dapbquhcrchd5" path="res://scripts/store_popup.gd" id="2_l2tiu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5r1vn"]
+texture = ExtResource("1_jmh8f")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[node name="StorePopup" type="PanelContainer"]
+offset_left = 256.0
+offset_top = 26.0
+offset_right = 863.0
+offset_bottom = 600.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_5r1vn")
+script = ExtResource("2_l2tiu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="items_scroller" type="ScrollContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="items" type="VBoxContainer" parent="VBoxContainer/items_scroller"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

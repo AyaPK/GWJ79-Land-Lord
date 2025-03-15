@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://r1aoxujsq3e8"]
+
+[ext_resource type="Texture2D" uid="uid://cxjct80p8gltr" path="res://art/rectbutton.png" id="1_hfvpq"]
+[ext_resource type="Script" uid="uid://fu5impwrfiyf" path="res://scripts/store_panel.gd" id="1_i2tl6"]
+[ext_resource type="Theme" uid="uid://dueaa2r2f1b70" path="res://themes/button.tres" id="3_fws0y"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fws0y"]
+texture = ExtResource("1_hfvpq")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="FontVariation" id="FontVariation_i2tl6"]
+variation_embolden = 0.9
+
+[node name="StorePanel" type="PanelContainer"]
+offset_right = 45.0
+offset_bottom = 90.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_fws0y")
+script = ExtResource("1_i2tl6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
+alignment = 1
+
+[node name="icon" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="details" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="ItemName" type="Label" parent="HBoxContainer/details"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_i2tl6")
+
+[node name="Cost" type="Label" parent="HBoxContainer/details"]
+layout_mode = 2
+
+[node name="Desc" type="Label" parent="HBoxContainer/details"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_fws0y")
+text = "Buy"

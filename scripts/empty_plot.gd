@@ -20,3 +20,9 @@ func _on_mouse_exited() -> void:
 #func _input(event: InputEvent) -> void:
 	#if Input.is_action_just_pressed("click") and hovered:
 		#print(grid_position)
+
+
+func _on_button_pressed() -> void:
+	Globals.hovering_paused = true
+	var store: PanelContainer = Property.STORE_POPUP.instantiate()
+	Ui.add_child(store)

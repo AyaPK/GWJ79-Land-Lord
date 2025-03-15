@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Globals="*res://globals/globals.gd"
 Ui="*res://scenes/ui.tscn"
 Property="*res://globals/property_manager.gd"
+Buyables="*res://globals/buyables.gd"
 
 [display]
 

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2fn2wt7cjqwx"]
+
+[ext_resource type="Theme" uid="uid://dueaa2r2f1b70" path="res://themes/button.tres" id="1_ss8ot"]
+
+[node name="Button" type="Button"]
+theme = ExtResource("1_ss8ot")
+text = "Close"
