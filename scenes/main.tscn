@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://cc44gor6xhfp8"]
+[gd_scene load_steps=7 format=4 uid="uid://cc44gor6xhfp8"]
 
 [ext_resource type="Texture2D" uid="uid://c70k6dg1q84tj" path="res://art/tilemap_packed.png" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://b478642h1blxq" path="res://scenes/main.gd" id="1_sugp2"]
 [ext_resource type="Script" uid="uid://bnvmwq7ybxrhk" path="res://scripts/camera_2d.gd" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://ceqtybdnokvnc" path="res://scenes/ui.tscn" id="4_jyhfs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0wfyh"]
 texture = ExtResource("1_o5qli")
@@ -152,3 +153,5 @@ tile_set = SubResource("TileSet_sugp2")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
 script = ExtResource("3_sugp2")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("4_jyhfs")]

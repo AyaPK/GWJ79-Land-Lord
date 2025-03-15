@@ -4,6 +4,7 @@ class_name Plot extends Area2D
 
 var grid_position: Vector2
 var hovered: bool = false
+var locked: bool = true
 
 func _ready() -> void:
 	$HoverRect.hide()
