@@ -1,6 +1,6 @@
 class_name Level extends Node2D
 
-const PLOT = preload("res://scenes/locked_plot.tscn")
+const PLOT = preload("res://scenes/plots/locked_plot.tscn")
 
 func _ready() -> void:
 	for x in range(0, 640, 64):

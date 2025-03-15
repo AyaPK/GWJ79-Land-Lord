@@ -15,8 +15,10 @@ expand_margin_right = 5.0
 script = ExtResource("1_nt7q6")
 
 [node name="HBoxContainer" type="PanelContainer" parent="."]
-offset_right = 118.0
-offset_bottom = 42.0
+offset_left = 17.0
+offset_top = 16.0
+offset_right = 151.0
+offset_bottom = 79.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_x4jx1")
@@ -31,12 +33,12 @@ expand_mode = 2
 
 [node name="x" type="Label" parent="HBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 30
 text = "x"
 
 [node name="CoinAmount" type="Label" parent="HBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
-theme_override_font_sizes/font_size = 30
-text = "999999999"
+theme_override_font_sizes/font_size = 40
+text = "99"

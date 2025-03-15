@@ -6,3 +6,6 @@ var money: int = 140
 var grid: Dictionary = {}
 var owned: int = 0
 var current_cost: int = 50
+
+var hovering_paused: bool = false
+var hovered_tile: Plot
