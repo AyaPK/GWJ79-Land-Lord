@@ -31,6 +31,7 @@ alignment = 1
 layout_mode = 2
 
 [node name="details" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 
 [node name="ItemName" type="Label" parent="HBoxContainer/details"]
@@ -41,6 +42,7 @@ theme_override_fonts/font = SubResource("FontVariation_i2tl6")
 layout_mode = 2
 
 [node name="Desc" type="Label" parent="HBoxContainer/details"]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 
 [node name="buy_button" type="Button" parent="HBoxContainer" groups=["store_scenes"]]

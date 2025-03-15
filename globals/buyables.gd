@@ -12,7 +12,7 @@ var buyables: Dictionary = {
 		"path": "res://scenes/plots/lake_plot.tscn",
 		"available": false,
 		"cost": 25,
-		"icon": "res://art/plot_icons/castle.png",
+		"icon": "res://art/plot_icons/lake.png",
 		"description": "Provides water to nearby areas"
 	}
 }

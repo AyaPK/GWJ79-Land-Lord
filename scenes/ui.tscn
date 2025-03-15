@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ceqtybdnokvnc"]
+[gd_scene load_steps=8 format=3 uid="uid://ceqtybdnokvnc"]
 
 [ext_resource type="Script" uid="uid://dymt5knkf0js5" path="res://scripts/ui.gd" id="1_nt7q6"]
 [ext_resource type="Texture2D" uid="uid://ffongc5ll3hd" path="res://art/coin.png" id="2_x4jx1"]
+[ext_resource type="Texture2D" uid="uid://dna1gtsf3oy5o" path="res://art/popicon.png" id="3_8dubc"]
 [ext_resource type="Texture2D" uid="uid://ldlltf7gb5rh" path="res://art/middlemouse.png" id="3_gdt2y"]
 [ext_resource type="Texture2D" uid="uid://dm8byg3l3gwb" path="res://art/camera.png" id="4_wm3ai"]
 [ext_resource type="Texture2D" uid="uid://y2pop2fk618e" path="res://art/wasd.png" id="5_wm3ai"]
@@ -13,11 +14,14 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 expand_margin_right = 5.0
+expand_margin_bottom = 5.0
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_nt7q6")
 
 [node name="HBoxContainer" type="PanelContainer" parent="."]
+z_index = -1
+z_as_relative = false
 offset_left = 17.0
 offset_top = 16.0
 offset_right = 151.0
@@ -26,20 +30,43 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_x4jx1")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/HBoxContainer"]
+[node name="coins" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/coins"]
 layout_mode = 2
 texture = ExtResource("2_x4jx1")
 expand_mode = 2
 
-[node name="x" type="Label" parent="HBoxContainer/HBoxContainer"]
+[node name="x" type="Label" parent="HBoxContainer/VBoxContainer/coins"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "x"
 
-[node name="CoinAmount" type="Label" parent="HBoxContainer/HBoxContainer"]
+[node name="CoinAmount" type="Label" parent="HBoxContainer/VBoxContainer/coins"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 40
+text = "99"
+
+[node name="population" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/population"]
+layout_mode = 2
+texture = ExtResource("3_8dubc")
+expand_mode = 2
+
+[node name="x" type="Label" parent="HBoxContainer/VBoxContainer/population"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "x"
+
+[node name="PopAmount" type="Label" parent="HBoxContainer/VBoxContainer/population"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
