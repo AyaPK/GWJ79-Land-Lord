@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ceqtybdnokvnc"]
+[gd_scene load_steps=7 format=3 uid="uid://ceqtybdnokvnc"]
 
 [ext_resource type="Script" uid="uid://dymt5knkf0js5" path="res://scripts/ui.gd" id="1_nt7q6"]
 [ext_resource type="Texture2D" uid="uid://ffongc5ll3hd" path="res://art/coin.png" id="2_x4jx1"]
 [ext_resource type="Texture2D" uid="uid://ldlltf7gb5rh" path="res://art/middlemouse.png" id="3_gdt2y"]
 [ext_resource type="Texture2D" uid="uid://dm8byg3l3gwb" path="res://art/camera.png" id="4_wm3ai"]
+[ext_resource type="Texture2D" uid="uid://y2pop2fk618e" path="res://art/wasd.png" id="5_wm3ai"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4jx1"]
 bg_color = Color(0, 0, 0, 0.231373)
@@ -54,3 +55,8 @@ texture = ExtResource("3_gdt2y")
 position = Vector2(965, 624)
 scale = Vector2(2, 2)
 texture = ExtResource("4_wm3ai")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(1086, 618)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_wm3ai")
