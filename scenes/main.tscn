@@ -155,7 +155,7 @@ tile_set = SubResource("TileSet_sugp2")
 zoom = Vector2(2, 2)
 script = ExtResource("3_sugp2")
 
-[node name="CanvasLayer" parent="." instance=ExtResource("4_jyhfs")]
+[node name="ui" parent="." instance=ExtResource("4_jyhfs")]
 
 [node name="Area2D" parent="." instance=ExtResource("2_0wfyh")]
 position = Vector2(-70, 12)

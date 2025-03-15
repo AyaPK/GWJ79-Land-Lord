@@ -20,6 +20,7 @@ func _buy() -> void:
 		Ui.add_child(buy_popup)
 		for callable in Property.buy_confirmed.get_connections():
 			Property.buy_confirmed.disconnect(callable["callable"])
+		get_tree().process_frame
 		Property.buy_confirmed.connect(_confirm_buy)
 
 func _confirm_buy() -> void:
