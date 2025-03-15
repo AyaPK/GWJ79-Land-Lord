@@ -1,7 +1,7 @@
 extends Node
 
 var grid_size: int = 64
-var money: int = 30000000000
+var money: int = 1500
 var population: int = 1
 
 var grid: Dictionary = {}

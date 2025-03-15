@@ -14,5 +14,12 @@ var buyables: Dictionary = {
 		"cost": 25,
 		"icon": "res://art/plot_icons/lake.png",
 		"description": "Provides water to nearby areas"
+	},
+	"Village": {
+		"path": "res://scenes/plots/village_plot.tscn",
+		"available": false,
+		"cost": 50,
+		"icon": "res://art/plot_icons/village.png",
+		"description": "Provides homes for 10 new citizens"
 	}
 }

@@ -13,7 +13,7 @@ func _on_buy_button_pressed() -> void:
 	var scene: Plot = res.instantiate()
 	get_tree().get_first_node_in_group("main_scene").add_child(scene)
 	var loc: Vector2 = Globals.hovered_tile.grid_position
-	Globals.grid[loc] = "item_name"
+	Globals.grid[loc] = item_name.text+""
 	scene.global_position = Vector2(loc.x*64, loc.y*64)
 	scene.update_grid_pos()
 	Globals.hovered_tile.queue_free()
