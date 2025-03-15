@@ -13,7 +13,7 @@ func _input(_event: InputEvent) -> void:
 		_buy()
 
 func _buy() -> void:
-	Globals.current_cost = (50 * ((Globals.owned*2.3)+1))
+	Globals.current_cost = (50 * ((Globals.owned*1.4)+1))
 	if Globals.money >= Globals.current_cost:
 		Globals.hovering_paused = true
 		hovered = false
