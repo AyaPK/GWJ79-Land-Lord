@@ -318,7 +318,7 @@ color = Color(0.467926, 0.493956, 0.08015, 0.494118)
 [node name="progress" type="TextureProgressBar" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
-max_value = 5000.0
+max_value = 1000.0
 value = 40.0
 texture_over = ExtResource("6_k7jfj")
 texture_progress = ExtResource("7_3ihv4")

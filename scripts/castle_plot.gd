@@ -4,12 +4,12 @@ class_name CastlePlot extends Plot
 
 var coin_speed: int = 1
 var coin_val: int = 1
-var click_strength: int = 100
+var click_strength: int = 50
 
 func _ready() -> void:
 	$HoverRect.hide()
 	if Buyables.buyables["Castle"]["cost"] == 0:
-		Buyables.buyables["Castle"]["cost"] = 1000
+		Buyables.buyables["Castle"]["cost"] = 5000
 	else:
 		Buyables.buyables["Castle"]["cost"] *= 10
 	Buyables.buyables["Castle"]["description"] = "Taxes citizens to generate a modest amount of gold.\nClick it to generate gold faster!"
