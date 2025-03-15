@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://cc44gor6xhfp8"]
+[gd_scene load_steps=9 format=4 uid="uid://cc44gor6xhfp8"]
 
-[ext_resource type="Texture2D" uid="uid://c70k6dg1q84tj" path="res://art/tilemap_packed.png" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://c70k6dg1q84tj" path="res://art/tiny_town.png" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://b478642h1blxq" path="res://scripts/main.gd" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cufllsjneowyo" path="res://scenes/plots/empty_plot.tscn" id="2_0wfyh"]
 [ext_resource type="Script" uid="uid://bnvmwq7ybxrhk" path="res://scripts/camera_2d.gd" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://ceqtybdnokvnc" path="res://scenes/ui.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://g1e4rtj4ipxn" path="res://scenes/plots/castle.tscn" id="6_tefeu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0wfyh"]
 texture = ExtResource("1_o5qli")
@@ -159,3 +160,6 @@ script = ExtResource("3_sugp2")
 
 [node name="Area2D" parent="." instance=ExtResource("2_0wfyh")]
 position = Vector2(-70, 12)
+
+[node name="CastlePlot" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(-71, 83)
