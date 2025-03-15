@@ -6,7 +6,7 @@ const ZOOM_INCREMENT: float = 0.2
 const ZOOM_RATE: float = 10.0
 const CAMERA_SPEED: float = 400.0
 
-var _target_zoom: float = 1.0
+var _target_zoom: float = 4.0
 
 func _ready() -> void:
 	set_physics_process(true)

@@ -8,6 +8,12 @@ var click_strength: int = 100
 
 func _ready() -> void:
 	$HoverRect.hide()
+	if Buyables.buyables["Castle"]["cost"] == 0:
+		Buyables.buyables["Castle"]["cost"] = 1000
+	else:
+		Buyables.buyables["Castle"]["cost"] *= 10
+	Buyables.buyables["Castle"]["description"] = "Taxes citizens to generate a modest amount of gold.\nClick it to generate gold faster!"
+	
 
 func _process(delta: float) -> void:
 	if progress.value < progress.max_value:

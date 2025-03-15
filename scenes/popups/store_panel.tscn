@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://r1aoxujsq3e8"]
+[gd_scene load_steps=7 format=3 uid="uid://r1aoxujsq3e8"]
 
 [ext_resource type="Texture2D" uid="uid://cxjct80p8gltr" path="res://art/rectbutton.png" id="1_hfvpq"]
 [ext_resource type="Script" uid="uid://fu5impwrfiyf" path="res://scripts/store_panel.gd" id="1_i2tl6"]
@@ -13,6 +13,8 @@ texture_margin_bottom = 20.0
 
 [sub_resource type="FontVariation" id="FontVariation_i2tl6"]
 variation_embolden = 0.9
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fws0y"]
 
 [node name="StorePanel" type="PanelContainer"]
 offset_right = 45.0
@@ -44,6 +46,7 @@ layout_mode = 2
 [node name="buy_button" type="Button" parent="HBoxContainer" groups=["store_scenes"]]
 layout_mode = 2
 theme = ExtResource("3_fws0y")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fws0y")
 text = "Buy"
 
 [connection signal="pressed" from="HBoxContainer/buy_button" to="." method="_on_buy_button_pressed"]

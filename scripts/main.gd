@@ -10,3 +10,14 @@ func _ready() -> void:
 			add_child(plot)
 			plot.update_grid_pos()
 			Globals.grid[Vector2(x, y)] = "locked"
+
+func generate_locked_tiles(center: Vector2) -> void:
+	for x in range(-1, 2):
+		for y in range(-1, 2):
+			var pos: Vector2 = Vector2(center.x+x, center.y+y)
+			if pos == Vector2.ZERO:
+				continue
+			var locked_scene: LockedPlot = PLOT.instantiate()
+			get_tree().get_first_node_in_group("main_scene").add_child(locked_scene)
+			Globals.grid[pos] = "locked"
+			locked_scene.global_position = Vector2(pos.x*64, pos.y*64)
