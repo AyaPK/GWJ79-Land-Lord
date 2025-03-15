@@ -11,6 +11,9 @@ func _ready() -> void:
 func update_grid_pos() -> void:
 	grid_position = Vector2(global_position.x/64, global_position.y/64)
 
+func _process(delta: float) -> void:
+	$HoverRect.visible = hovered
+
 func _on_mouse_entered() -> void:
 	if !Globals.hovering_paused:
 		Globals.hovered_tile = self
@@ -20,4 +23,4 @@ func _on_mouse_entered() -> void:
 func _on_mouse_exited() -> void:
 	if !Globals.hovering_paused:
 		$HoverRect.hide()
-		hovered = false
+	hovered = false

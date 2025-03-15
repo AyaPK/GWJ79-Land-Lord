@@ -13,26 +13,18 @@ func _ready() -> void:
 	else:
 		Buyables.buyables["Castle"]["cost"] *= 10
 	Buyables.buyables["Castle"]["description"] = "Taxes citizens to generate a modest amount of gold.\nClick it to generate gold faster!"
-	
+	Buyables.buyables["Lake"]["available"] = true
 
 func _process(delta: float) -> void:
 	if progress.value < progress.max_value:
 		progress.value += coin_speed
 	else:
-		Globals.money += coin_val
+		Globals.money += coin_val * Globals.population
 		progress.value = 0
 
 func update_grid_pos() -> void:
 	grid_position = Vector2(global_position.x/64, global_position.y/64)
 
-func _on_mouse_entered() -> void:
-	$HoverRect.show()
-	hovered = true
-
-func _on_mouse_exited() -> void:
-	$HoverRect.hide()
-	hovered = false
-#
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("click") and hovered:
 		progress.value += click_strength

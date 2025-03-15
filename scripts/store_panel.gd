@@ -15,6 +15,7 @@ func _on_buy_button_pressed() -> void:
 	var loc: Vector2 = Globals.hovered_tile.grid_position
 	Globals.grid[loc] = "item_name"
 	scene.global_position = Vector2(loc.x*64, loc.y*64)
+	scene.update_grid_pos()
 	Globals.hovered_tile.queue_free()
 	for node in get_tree().get_nodes_in_group("store_scenes"):
 		node.queue_free()
