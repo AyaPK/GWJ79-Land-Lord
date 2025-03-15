@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://fqwvq74t0dvp"]
+
+[ext_resource type="Texture2D" uid="uid://yh3mub4ae71d" path="res://art/menuRect.png" id="1_1uc64"]
+[ext_resource type="Theme" uid="uid://dueaa2r2f1b70" path="res://themes/button.tres" id="2_1uc64"]
+[ext_resource type="Script" uid="uid://cshi5o4u4mv1r" path="res://scripts/buy_popup.gd" id="2_myfq5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_afhen"]
+texture = ExtResource("1_1uc64")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[node name="BuyPopup" type="PanelContainer"]
+offset_left = 159.0
+offset_top = 86.0
+offset_right = 417.0
+offset_bottom = 216.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_afhen")
+script = ExtResource("2_myfq5")
+
+[node name="menu" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="top" type="HBoxContainer" parent="menu"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="menu/top"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Pay 1000 coins for this land?"
+horizontal_alignment = 1
+
+[node name="bottom" type="HBoxContainer" parent="menu"]
+layout_mode = 2
+alignment = 1
+
+[node name="yes" type="Button" parent="menu/bottom"]
+layout_mode = 2
+theme = ExtResource("2_1uc64")
+text = "Yes"
+
+[node name="no" type="Button" parent="menu/bottom"]
+layout_mode = 2
+theme = ExtResource("2_1uc64")
+text = "No"

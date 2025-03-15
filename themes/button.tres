@@ -1,0 +1,44 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dueaa2r2f1b70"]
+
+[ext_resource type="Texture2D" uid="uid://cxjct80p8gltr" path="res://art/rectbutton.png" id="1_dpjbf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dpjbf"]
+texture = ExtResource("1_dpjbf")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+modulate_color = Color(0.686275, 0.686275, 0.686275, 0.603922)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s8pfl"]
+texture = ExtResource("1_dpjbf")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/colors/icon_disabled_color = Color(0, 0, 0, 1)
+Button/colors/icon_focus_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/icon_normal_color = Color(0, 0, 0, 1)
+Button/colors/icon_pressed_color = Color(0, 0, 0, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 0
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = null
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = SubResource("StyleBoxTexture_dpjbf")
+Button/styles/normal = SubResource("StyleBoxTexture_s8pfl")
+Button/styles/pressed = SubResource("StyleBoxTexture_s8pfl")
