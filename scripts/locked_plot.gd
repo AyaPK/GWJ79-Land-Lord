@@ -27,6 +27,7 @@ func _confirm_buy() -> void:
 	Globals.money -= Globals.current_cost
 	var plot: EmptyPlot = EMPTY_PLOT.instantiate()
 	plot.global_position = global_position
+	plot.update_grid_pos()
 	Globals.grid[grid_position] = "empty"
 	Globals.owned += 1
 	get_parent().add_child(plot)

@@ -300,6 +300,7 @@ tile_map_data = PackedByteArray("AAAAAAQAAAAAAAgAAAAAAAUAAAAAAAoAAAAAAAYAAQAJAAQ
 tile_set = SubResource("TileSet_g2n2s")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.568627)
 offset_right = 64.0
 offset_bottom = 64.0
