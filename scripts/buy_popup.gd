@@ -17,6 +17,7 @@ func _on_yes_pressed() -> void:
 
 func _on_no_pressed() -> void:
 	Globals.hovering_paused = false
+	@warning_ignore("untyped_declaration")
 	for callable in Property.buy_confirmed.get_connections():
 		Property.buy_confirmed.disconnect(callable["callable"])
 	for _c in get_tree().get_nodes_in_group("plots"):

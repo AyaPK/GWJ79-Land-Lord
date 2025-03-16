@@ -28,6 +28,7 @@ func _buy() -> void:
 		hovered = false
 		var buy_popup: PanelContainer = BUY_POPUP.instantiate()
 		Ui.add_child(buy_popup)
+		@warning_ignore("untyped_declaration")
 		for callable in Property.buy_confirmed.get_connections():
 			Property.buy_confirmed.disconnect(callable["callable"])
 		Property.buy_confirmed.connect(_confirm_buy)

@@ -10,7 +10,7 @@ const PINCH_THRESHOLD: float = 10.0  # Increased threshold for pinch detection
 const DRAG_DECELERATION: float = 5.0  # Higher value = faster deceleration
 
 var _target_zoom: float = 4.0
-var _touch_points = {}
+var _touch_points: Dictionary = {}
 var _last_pinch_distance: float = 0.0
 var _is_dragging: bool = false
 var _velocity: Vector2 = Vector2.ZERO
@@ -67,10 +67,10 @@ func _input(event: InputEvent) -> void:
 				_is_dragging = false
 				
 				if _is_dragging:
-					var current_time = Time.get_ticks_msec() / 1000.0
-					var time_diff = current_time - _last_drag_time
+					var current_time: float = Time.get_ticks_msec() / 1000.0
+					var time_diff: float = current_time - _last_drag_time
 					if time_diff > 0 and time_diff < 0.1:  # Only apply flick if release was quick
-						var drag_diff = (event.position - _last_drag_position) / zoom.x
+						var drag_diff: Vector2 = (event.position - _last_drag_position) / zoom.x
 						_velocity = drag_diff * TOUCH_DRAG_SENSITIVITY / time_diff
 	
 	elif event is InputEventScreenDrag:
@@ -84,11 +84,11 @@ func _input(event: InputEvent) -> void:
 			_velocity = Vector2.ZERO 
 		
 		elif _touch_points.size() == 2:
-			var touch_points = _touch_points.values()
-			var current_distance = touch_points[0].distance_to(touch_points[1])
+			var touch_points: Array = _touch_points.values()
+			var current_distance: float = touch_points[0].distance_to(touch_points[1])
 			
 			if _last_pinch_distance != 0:
-				var distance_diff = current_distance - _last_pinch_distance
+				var distance_diff: float = current_distance - _last_pinch_distance
 				if abs(distance_diff) > PINCH_THRESHOLD:
 					if distance_diff > 0:
 						zoom_out()
