@@ -9,4 +9,5 @@ var owned: int = 0
 var current_cost: int = 50
 
 var hovering_paused: bool = false
+var zooming_paused: bool = false
 var hovered_tile: Plot

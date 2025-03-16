@@ -47,10 +47,11 @@ func _input(event: InputEvent) -> void:
 			position -= event.relative / zoom
 	elif event is InputEventMouseButton:
 		if event.is_pressed():
-			if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-				zoom_in()
-			elif event.button_index == MOUSE_BUTTON_WHEEL_UP:
-				zoom_out()
+			if !Globals.zooming_paused:
+				if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+					zoom_in()
+				elif event.button_index == MOUSE_BUTTON_WHEEL_UP:
+					zoom_out()
 	
 	elif event is InputEventScreenTouch:
 		if event.pressed:

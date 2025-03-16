@@ -18,7 +18,18 @@ func _ready() -> void:
 	var close_button: Button = CLOSE_BUTTON.instantiate()
 	close_button.pressed.connect(_on_close_pressed)
 	v_box_container.add_child(close_button)
+	Globals.zooming_paused = true
+
+func _notification(what: int) -> void:
+	match what:
+		NOTIFICATION_PREDELETE:
+			on_predelete()
+
+func on_predelete() -> void:
+	Globals.hovering_paused = false
+	Globals.zooming_paused = false
+	for _c: Plot in get_tree().get_nodes_in_group("plots"):
+		_c.hovered = false
 
 func _on_close_pressed() -> void:
 	queue_free()
-	Globals.hovering_paused = false

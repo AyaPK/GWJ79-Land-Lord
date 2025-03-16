@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=4 uid="uid://e8jl8acjriuv"]
 
-[ext_resource type="Script" path="res://scripts/plot_lake.gd" id="1_6ttno"]
+[ext_resource type="Script" uid="uid://be1lfnffyw5sh" path="res://scripts/plots/lake_plot.gd" id="1_6ttno"]
 [ext_resource type="Texture2D" uid="uid://c70k6dg1q84tj" path="res://art/tiny_town.png" id="2_3hh8r"]
 [ext_resource type="Texture2D" uid="uid://5bgh323bt70y" path="res://art/tiny_dungeon.png" id="3_vvffo"]
 [ext_resource type="Texture2D" uid="uid://dl2ww2j2jhnvh" path="res://art/tiny_river.png" id="4_74kvp"]

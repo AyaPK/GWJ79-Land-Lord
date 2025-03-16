@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=4 uid="uid://g1e4rtj4ipxn"]
 
-[ext_resource type="Script" uid="uid://d1vocbhb7t302" path="res://scripts/castle_plot.gd" id="1_bm8lm"]
+[ext_resource type="Script" uid="uid://d1vocbhb7t302" path="res://scripts/plots/castle_plot.gd" id="1_bm8lm"]
 [ext_resource type="Texture2D" uid="uid://o3yr6xkcwgdj" path="res://art/plot_icons/castle.png" id="2_4hfnc"]
 [ext_resource type="Texture2D" uid="uid://c70k6dg1q84tj" path="res://art/tiny_town.png" id="3_kbjj4"]
 [ext_resource type="Texture2D" uid="uid://5bgh323bt70y" path="res://art/tiny_dungeon.png" id="4_1s6jr"]
