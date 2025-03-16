@@ -3,7 +3,7 @@ class_name CastlePlot extends Plot
 @onready var progress: TextureProgressBar = $progress
 
 var coin_speed: int = 1
-var coin_val: int = 1
+var coin_val: int = 2
 var click_strength: int = 50
 
 func _ready() -> void:
