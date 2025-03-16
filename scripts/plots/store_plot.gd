@@ -2,6 +2,9 @@ class_name StorePlot extends Plot
 
 @onready var progress: TextureProgressBar = $progress
 
+@onready var output: OutputAnim = $output
+@onready var output_2: OutputAnim = $output2
+
 var coin_speed: int = 1
 var coin_val: int = 20
 var click_strength: int = 200
@@ -19,6 +22,10 @@ func _process(delta: float) -> void:
 			Globals.money += coin_val * to_sell
 			Globals.food -= to_sell
 			progress.value = 0
+			$output.amount.text = "+"+str(coin_val * to_sell)
+			$output.animation.play("anim")
+			$output2.amount.text = "-"+str(to_sell)
+			$output2.animation.play("anim")
 
 func _input(event: InputEvent) -> void:
 	super(event)

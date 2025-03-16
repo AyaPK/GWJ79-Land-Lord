@@ -18,6 +18,8 @@ func _on_destroy_button_pressed() -> void:
 
 func _on_destroy_button_mouse_entered() -> void:
 	$DestroyContainer.modulate = "ffffffff"
+	for _c in get_tree().get_nodes_in_group("plots"):
+		_c.hovered = false
 
 func _on_destroy_button_mouse_exited() -> void:
 	$DestroyContainer.modulate = "ffffffaa"

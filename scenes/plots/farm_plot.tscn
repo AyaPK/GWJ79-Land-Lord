@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cr5n36gluq6cp"]
+[gd_scene load_steps=16 format=4 uid="uid://cr5n36gluq6cp"]
 
 [ext_resource type="Script" uid="uid://b3dx3e76c8vp1" path="res://scripts/plots/farm_plot.gd" id="1_oh41f"]
 [ext_resource type="Texture2D" uid="uid://c70k6dg1q84tj" path="res://art/tiny_town.png" id="2_qumll"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bis7a8xi7bfmh" path="res://art/tiny_farm.png" id="5_cl82u"]
 [ext_resource type="Texture2D" uid="uid://bp7fsn0euh3d0" path="res://art/progbar_under.png" id="6_cl82u"]
 [ext_resource type="Texture2D" uid="uid://6thbptbpvlaw" path="res://art/progbar_base.png" id="7_cdrou"]
+[ext_resource type="PackedScene" uid="uid://df214rcvbkbk4" path="res://scenes/output_anim.tscn" id="8_cdrou"]
+[ext_resource type="Texture2D" uid="uid://dysj7vk2w4x1t" path="res://art/apple.png" id="9_fu87s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gpc57"]
 texture = ExtResource("2_qumll")
@@ -643,6 +645,9 @@ max_value = 1000.0
 value = 40.0
 texture_over = ExtResource("6_cl82u")
 texture_progress = ExtResource("7_cdrou")
+
+[node name="output_host" parent="." instance=ExtResource("8_cdrou")]
+icon = ExtResource("9_fu87s")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

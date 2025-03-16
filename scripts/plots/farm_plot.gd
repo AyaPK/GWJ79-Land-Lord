@@ -1,4 +1,4 @@
-class_name PlotTemplate extends Plot
+class_name FarmPlot extends Plot
 
 @onready var progress: TextureProgressBar = $progress
 
@@ -12,8 +12,11 @@ func _process(delta: float) -> void:
 	if progress.value < progress.max_value:
 		progress.value += food_speed
 	else:
-		Globals.food += (food_val * _find_adjacent_lakes())
+		var to_add: int = food_val * _find_adjacent_lakes()
+		Globals.food += to_add
 		progress.value = 0
+		$output_host.amount.text = "+"+str(to_add)
+		$output_host.animation.play("anim")
 
 func _input(event: InputEvent) -> void:
 	super(event)

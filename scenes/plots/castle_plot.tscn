@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://g1e4rtj4ipxn"]
+[gd_scene load_steps=13 format=4 uid="uid://g1e4rtj4ipxn"]
 
 [ext_resource type="Script" uid="uid://d1vocbhb7t302" path="res://scripts/plots/castle_plot.gd" id="1_bm8lm"]
 [ext_resource type="Texture2D" uid="uid://o3yr6xkcwgdj" path="res://art/plot_icons/castle.png" id="2_4hfnc"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://omop6f3mok8e" path="res://art/recttext.png" id="5_xevvm"]
 [ext_resource type="Texture2D" uid="uid://bp7fsn0euh3d0" path="res://art/progbar_under.png" id="6_k7jfj"]
 [ext_resource type="Texture2D" uid="uid://6thbptbpvlaw" path="res://art/progbar_base.png" id="7_3ihv4"]
+[ext_resource type="PackedScene" uid="uid://df214rcvbkbk4" path="res://scenes/output_anim.tscn" id="8_4hfnc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bm8lm"]
 texture = ExtResource("3_kbjj4")
@@ -322,6 +323,8 @@ max_value = 1000.0
 value = 40.0
 texture_over = ExtResource("6_k7jfj")
 texture_progress = ExtResource("7_3ihv4")
+
+[node name="output" parent="." instance=ExtResource("8_4hfnc")]
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

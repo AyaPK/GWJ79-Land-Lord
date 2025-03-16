@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dpydc8nkkn0cy"]
+[gd_scene load_steps=15 format=4 uid="uid://dpydc8nkkn0cy"]
 
 [ext_resource type="Script" uid="uid://py6kt5ru2caj" path="res://scripts/plots/store_plot.gd" id="1_n6cy8"]
 [ext_resource type="Texture2D" uid="uid://c70k6dg1q84tj" path="res://art/tiny_town.png" id="2_upuxq"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://dl2ww2j2jhnvh" path="res://art/tiny_river.png" id="4_g1qnh"]
 [ext_resource type="Texture2D" uid="uid://bp7fsn0euh3d0" path="res://art/progbar_under.png" id="5_wnr8t"]
 [ext_resource type="Texture2D" uid="uid://6thbptbpvlaw" path="res://art/progbar_base.png" id="6_g1qnh"]
+[ext_resource type="PackedScene" uid="uid://df214rcvbkbk4" path="res://scenes/output_anim.tscn" id="7_g1qnh"]
+[ext_resource type="Texture2D" uid="uid://c8a1cu3w0rjm1" path="res://art/coin_big.png" id="8_5fsym"]
+[ext_resource type="Texture2D" uid="uid://dysj7vk2w4x1t" path="res://art/apple.png" id="9_8hmf6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5fsym"]
 texture = ExtResource("2_upuxq")
@@ -519,6 +522,13 @@ max_value = 1000.0
 value = 40.0
 texture_over = ExtResource("5_wnr8t")
 texture_progress = ExtResource("6_g1qnh")
+
+[node name="output" parent="." instance=ExtResource("7_g1qnh")]
+icon = ExtResource("8_5fsym")
+
+[node name="output2" parent="." instance=ExtResource("7_g1qnh")]
+icon = ExtResource("9_8hmf6")
+y_offset = 16
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
