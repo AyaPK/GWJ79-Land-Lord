@@ -285,7 +285,7 @@ sources/1 = SubResource("TileSetAtlasSource_4hfnc")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_syd1t"]
 size = Vector2(64, 64)
 
-[node name="CastlePlot" type="Area2D"]
+[node name="CastlePlot" type="Area2D" groups=["plots"]]
 script = ExtResource("1_bm8lm")
 icon = ExtResource("2_4hfnc")
 

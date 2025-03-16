@@ -27,6 +27,13 @@ var buyables: Dictionary = {
 		"available": false,
 		"cost": 400,
 		"icon": "res://art/plot_icons/store.png",
-		"description": "Generates gold from nearby villages"
+		"description": "Sells food to nearby villages"
+	},
+	"Farmland": {
+		"path": "res://scenes/plots/farm_plot.tscn",
+		"available": false,
+		"cost": 500,
+		"icon": "res://art/plot_icons/farm.png",
+		"description": "Creates food for your citizens\nNeeds water to grow crops"
 	}
 }
