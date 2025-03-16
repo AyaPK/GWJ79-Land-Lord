@@ -1,17 +1,14 @@
-[gd_scene load_steps=16 format=4 uid="uid://cr5n36gluq6cp"]
+[gd_scene load_steps=13 format=4 uid="uid://c45uj0sc0d26u"]
 
-[ext_resource type="Script" uid="uid://b3dx3e76c8vp1" path="res://scripts/plots/farm_plot.gd" id="1_oh41f"]
-[ext_resource type="Texture2D" uid="uid://c70k6dg1q84tj" path="res://art/tiny_town.png" id="2_qumll"]
-[ext_resource type="Texture2D" uid="uid://5bgh323bt70y" path="res://art/tiny_dungeon.png" id="3_npj1l"]
-[ext_resource type="Texture2D" uid="uid://dl2ww2j2jhnvh" path="res://art/tiny_river.png" id="4_npj1l"]
-[ext_resource type="Texture2D" uid="uid://bis7a8xi7bfmh" path="res://art/tiny_farm.png" id="5_cl82u"]
-[ext_resource type="Texture2D" uid="uid://bp7fsn0euh3d0" path="res://art/progbar_under.png" id="6_cl82u"]
-[ext_resource type="Texture2D" uid="uid://6thbptbpvlaw" path="res://art/progbar_base.png" id="7_cdrou"]
-[ext_resource type="PackedScene" uid="uid://df214rcvbkbk4" path="res://scenes/output_anim.tscn" id="8_cdrou"]
-[ext_resource type="Texture2D" uid="uid://dysj7vk2w4x1t" path="res://art/apple.png" id="9_fu87s"]
+[ext_resource type="Script" uid="uid://bboqnb63pbdyl" path="res://scripts/plots/town_plot.gd" id="1_autju"]
+[ext_resource type="Texture2D" uid="uid://c70k6dg1q84tj" path="res://art/tiny_town.png" id="2_jhsi4"]
+[ext_resource type="Texture2D" uid="uid://omop6f3mok8e" path="res://art/recttext.png" id="2_pbjuv"]
+[ext_resource type="Texture2D" uid="uid://5bgh323bt70y" path="res://art/tiny_dungeon.png" id="3_hnigk"]
+[ext_resource type="Texture2D" uid="uid://dl2ww2j2jhnvh" path="res://art/tiny_river.png" id="4_vhi2k"]
+[ext_resource type="Texture2D" uid="uid://bis7a8xi7bfmh" path="res://art/tiny_farm.png" id="5_d8hxi"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fu87s"]
-texture = ExtResource("2_qumll")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3y8lu"]
+texture = ExtResource("2_jhsi4")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -145,8 +142,8 @@ texture = ExtResource("2_qumll")
 10:10/0 = 0
 11:10/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dmcx4"]
-texture = ExtResource("3_npj1l")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s0hdh"]
+texture = ExtResource("3_hnigk")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -280,8 +277,8 @@ texture = ExtResource("3_npj1l")
 10:10/0 = 0
 11:10/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5ckye"]
-texture = ExtResource("4_npj1l")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rvoq8"]
+texture = ExtResource("4_vhi2k")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -481,8 +478,8 @@ texture = ExtResource("4_npj1l")
 16:10/0 = 0
 17:10/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uveu0"]
-texture = ExtResource("5_cl82u")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_70ind"]
+texture = ExtResource("5_d8hxi")
 texture_region_size = Vector2i(18, 18)
 0:0/0 = 0
 1:0/0 = 0
@@ -597,34 +594,41 @@ texture_region_size = Vector2i(18, 18)
 14:6/0 = 0
 15:6/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_cdrou"]
-sources/0 = SubResource("TileSetAtlasSource_fu87s")
-sources/1 = SubResource("TileSetAtlasSource_dmcx4")
-sources/2 = SubResource("TileSetAtlasSource_5ckye")
-sources/3 = SubResource("TileSetAtlasSource_uveu0")
+[sub_resource type="TileSet" id="TileSet_vu1xq"]
+sources/0 = SubResource("TileSetAtlasSource_3y8lu")
+sources/1 = SubResource("TileSetAtlasSource_s0hdh")
+sources/2 = SubResource("TileSetAtlasSource_rvoq8")
+sources/3 = SubResource("TileSetAtlasSource_70ind")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_syd1t"]
 size = Vector2(64, 64)
 
-[node name="FarmPlot" type="Area2D" groups=["plots"]]
-script = ExtResource("1_oh41f")
+[node name="TownPlot" type="Area2D" groups=["plots"]]
+script = ExtResource("1_autju")
 destroyable = true
+
+[node name="TileMapLayer3" type="TileMapLayer" parent="."]
+scale = Vector2(0.5, 0.5)
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAACAAAAAAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAACAAAAAAADAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAFAAUAAAAAAAAAAAAGAAYAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAABAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAcAAAAAAAAAAAABAAAAAAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAABAAUAAAACAAAAAAABAAYAAAAAAAAAAAABAAcAAAAAAAAAAAACAAAAAAABAAAAAAACAAEAAAABAAAAAAACAAMAAAABAAAAAAACAAQAAAACAAAAAAACAAUAAAAAAAAAAAACAAYAAAAAAAAAAAACAAcAAAAAAAAAAAADAAAAAAAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAADAAQAAAAAAAAAAAADAAUAAAAAAAAAAAADAAYAAAABAAAAAAADAAcAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAABAAAAAAAEAAUAAAAAAAAAAAAEAAYAAAAAAAAAAAAEAAcAAAAAAAAAAAAFAAAAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAMAAAAAAAAAAAAFAAYAAAACAAAAAAAFAAcAAAAAAAAAAAAGAAAAAAAAAAAAAAAGAAEAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAAAAAAAAAAGAAQAAAACAAAAAAAGAAUAAAACAAAAAAAGAAcAAAAAAAAAAAAHAAAAAAAAAAAAAAAHAAEAAAABAAAAAAAHAAIAAAAAAAAAAAAHAAMAAAAAAAAAAAAHAAQAAAAAAAAAAAAHAAUAAAAAAAAAAAAHAAYAAAAAAAAAAAAHAAcAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_vu1xq")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAEAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAFAAUAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAACAAAAAAAAAAUAAAACAAAAAAAAAAYAAAAAAAAAAAAAAAcAAAAAAAAAAAABAAIAAAABAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAABAAUAAAABAAAAAAABAAYAAAAAAAAAAAABAAcAAAAAAAAAAAACAAAAAAAAAAAAAAACAAEAAAAAAAAAAAACAAMAAAAAAAAAAAACAAQAAAAAAAAAAAACAAUAAAAAAAAAAAACAAYAAAAAAAAAAAACAAcAAAAAAAAAAAADAAAAAAAAAAAAAAADAAEAAAAAAAAAAAADAAQAAAABAAAAAAADAAUAAAAAAAAAAAADAAYAAAAAAAAAAAADAAcAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAABAAAAAAAEAAIAAAAAAAAAAAAEAAUAAAAAAAAAAAAEAAYAAAACAAAAAAAEAAcAAAABAAAAAAAFAAAAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAMAAAAAAAAAAAAFAAYAAAAAAAAAAAAFAAcAAAACAAAAAAAGAAAAAAACAAAAAAAGAAEAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAAAAAAAAAAGAAQAAAAAAAAAAAAGAAUAAAACAAAAAAAGAAYAAAAAAAAAAAAGAAcAAAACAAAAAAAHAAAAAAAAAAAAAAAHAAEAAAAAAAAAAAAHAAIAAAABAAAAAAAHAAMAAAAAAAAAAAAHAAQAAAAAAAAAAAAHAAUAAAAAAAAAAAAHAAYAAAAAAAAAAAAHAAcAAAAAAAAAAAA=")
-tile_set = SubResource("TileSet_cdrou")
+tile_map_data = PackedByteArray("AAADAAAAAAAAAAEAAAADAAEAAAAAAAIAAAADAAIAAAAAAAIAAAADAAMAAAAAAAIAAAADAAQAAAAAAAIAAAADAAUAAAAAAAIAAAADAAYAAAAAAAIAAAADAAcAAAAAAAEAAGAEAAAAAAAAAAEAAFAEAAEAAAAAAAIAADAEAAIAAAAAAAIAADAEAAMAAAAAAAIAADAEAAQAAAAAAAIAADAEAAUAAAAAAAIAADAEAAYAAAAAAAIAADAEAAcAAAAAAAEAADAAAAAAAAABAAUAAAAAAAEAAAABAAYAAAABAAAAAAACAAUAAAABAAEAAAACAAYAAAACAAAAAAADAAUAAAACAAEAAAADAAYAAAAAAP//AAABAAQAAAABAP//AAACAAQAAAACAP//AAADAAQAAAA=")
+tile_set = SubResource("TileSet_vu1xq")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAACAAIAAQADAAQAAFACAAEAAQAEAAQAAAABAAEAAQAEAAQAAGABAAIAAQADAAQAAGABAAMAAQADAAQAAGABAAQAAQADAAQAAGABAAUAAQADAAQAAGABAAYAAQAEAAQAADACAAYAAQAEAAQAAFACAAUAAQADAAQAAFACAAQAAQADAAQAAFACAAMAAQADAAQAAFAFAAEAAQAEAAQAAGAFAAIAAQADAAQAAGAFAAMAAQADAAQAAGAFAAQAAQADAAQAAGAFAAUAAQADAAQAAGAFAAYAAQAEAAQAADAGAAEAAQAEAAQAAAAGAAIAAQADAAQAAFAGAAMAAQADAAQAAFAGAAQAAQADAAQAAFAGAAUAAQADAAQAAFAGAAYAAQAEAAQAAFA=")
-tile_set = SubResource("TileSet_cdrou")
+tile_map_data = PackedByteArray("AAADAAEAAQABAAcAAAAEAAIAAQADAAgAAAAEAAQAAQABAAcAAAAAAAAAAAAAAAUAAAAAAAEAAAAAAAQAAAAAAAIAAAAAAAUAAAAAAAMAAAAAAAQAAAAAAAQAAAAAAAUAAAAAAAUAAAABAAYAAAABAAIAAAACAAUAAAABAAMAAAACAAQAAAABAAQAAAACAAUAAAABAAUAAAABAAcAAAACAAIAAAADAAUAAAACAAMAAAADAAQAAAACAAQAAAADAAUAAAACAAUAAAADAAYAAAAAAP//AAAAAAQAAAABAAEAAAACAAQAAAACAAEAAAADAAQAAAAFAAAAAAAEAAUAAAAFAAEAAAAEAAQAAAAFAAIAAAAEAAUAAAAFAAMAAAAAAAQAAAAFAAQAAAAAAAUAAAAFAAUAAAABAAYAAAAGAAAAAAAGAAUAAAAGAAEAAAAGAAQAAAAGAAIAAAAGAAUAAAAGAAMAAAACAAQAAAAGAAQAAAACAAUAAAAGAAUAAAABAAcAAAAHAAAAAAAHAAUAAAAHAAEAAAAHAAQAAAAHAAIAAAAHAAUAAAAHAAMAAAADAAQAAAAHAAQAAAADAAUAAAAHAAUAAAADAAYAAAAFAP//AAAEAAQAAAAGAP//AAAGAAQAAAAHAP//AAAHAAQAAAABAAYAAQAEAAkAAAADAAcAAQAEAAcAAAAHAAYAAQADAAgAAAA=")
+tile_set = SubResource("TileSet_vu1xq")
 
-[node name="TileMapLayer3" type="TileMapLayer" parent="."]
-position = Vector2(4, 3)
-scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAAAAAYAAAAIAAkAAAADAAIAAAAJAAQAAAABAAEAAwAKAAMAAAABAAIAAwAKAAMAAAABAAMAAwAKAAMAAAABAAQAAwAKAAMAAAABAAUAAwAKAAMAAAAFAAUAAwAIAAMAAAAFAAQAAwAIAAMAAAAFAAMAAwAIAAMAAAAFAAIAAwAJAAMAAAAFAAEAAwAJAAMAAAADAAYAAwAJAAAAAAADAAUAAwAJAAAAAAAEAAYAAwAKAAAAAAD//wcAAwAHAAIAAAAAAAcAAwAIAAIAAAABAAcAAwAIAAIAAAACAAcAAwAIAAIAAAADAAcAAwAIAAIAAAAEAAcAAwAIAAIAAAAFAAcAAwAIAAIAAAAGAAcAAwAIAAIAAAAHAAcAAwAJAAIAAAA=")
-tile_set = SubResource("TileSet_cdrou")
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.568627)
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("2_pbjuv")
+metadata/_edit_use_anchors_ = true
 
 [node name="MouseDetect" type="CollisionShape2D" parent="."]
 visible = false
@@ -637,17 +641,6 @@ offset_right = 64.0
 offset_bottom = 64.0
 color = Color(0.467926, 0.493956, 0.08015, 0.494118)
 metadata/_edit_use_anchors_ = true
-
-[node name="progress" type="TextureProgressBar" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-max_value = 1000.0
-value = 40.0
-texture_over = ExtResource("6_cl82u")
-texture_progress = ExtResource("7_cdrou")
-
-[node name="output_host" parent="." instance=ExtResource("8_cdrou")]
-icon = ExtResource("9_fu87s")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

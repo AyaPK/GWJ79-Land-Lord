@@ -22,6 +22,13 @@ var buyables: Dictionary = {
 		"icon": "res://art/plot_icons/village.png",
 		"description": "Provides homes for 10 new citizens"
 	},
+	"Town": {
+		"path": "res://scenes/plots/town_plot.tscn",
+		"available": false,
+		"cost": 500,
+		"icon": "res://art/plot_icons/town.png",
+		"description": "Provides homes for 50 new citizens"
+	},
 	"Store": {
 		"path": "res://scenes/plots/store_plot.tscn",
 		"available": false,
@@ -29,7 +36,7 @@ var buyables: Dictionary = {
 		"icon": "res://art/plot_icons/store.png",
 		"description": "Sells food to nearby villages"
 	},
-	"Farmland": {
+	"Small Farm": {
 		"path": "res://scenes/plots/farm_plot.tscn",
 		"available": false,
 		"cost": 500,

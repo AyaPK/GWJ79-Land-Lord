@@ -11,6 +11,7 @@ var click_strength: int = 200
 
 func _ready() -> void:
 	$HoverRect.hide()
+	Buyables.buyables["Town"]["available"] = true
 
 
 func _process(_delta: float) -> void:
@@ -18,7 +19,7 @@ func _process(_delta: float) -> void:
 		progress.value += coin_speed
 	else:
 		if Globals.food > 0:
-			var to_sell: int = clamp(_find_adjacent_villages(), 0, Globals.food)
+			var to_sell: int = clamp(_find_adjacent_residences(), 0, Globals.food)
 			Globals.money += coin_val * to_sell
 			Globals.food -= to_sell
 			progress.value = 0
@@ -32,7 +33,7 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("click") and hovered:
 		pass
 
-func _find_adjacent_villages() -> int:
+func _find_adjacent_residences() -> int:
 	var count: int = 0
 	var center: Vector2 = grid_position
 	for x in range(-1, 2):
@@ -40,6 +41,6 @@ func _find_adjacent_villages() -> int:
 			var pos: Vector2 = Vector2(center.x+x, center.y+y)
 			if pos == center or pos not in Globals.grid:
 				continue
-			if Globals.grid[pos] == "Village":
+			if Globals.grid[pos] == "Village" or Globals.grid[pos] == "Town":
 				count += 1
 	return count

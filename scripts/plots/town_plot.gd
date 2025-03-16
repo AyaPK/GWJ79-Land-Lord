@@ -1,7 +1,8 @@
-class_name PlotTemplate extends Plot
+class_name PlotTown extends Plot
 
 func _ready() -> void:
 	$HoverRect.hide()
+	Globals.population += 50
 
 func _process(delta: float) -> void:
 	super(delta)
