@@ -13,7 +13,7 @@ func _ready() -> void:
 	$HoverRect.hide()
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if progress.value < progress.max_value:
 		progress.value += coin_speed
 	else:
