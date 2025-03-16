@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://r1aoxujsq3e8"]
+[gd_scene load_steps=9 format=3 uid="uid://r1aoxujsq3e8"]
 
 [ext_resource type="Texture2D" uid="uid://cxjct80p8gltr" path="res://art/rectbutton.png" id="1_hfvpq"]
 [ext_resource type="Script" uid="uid://fu5impwrfiyf" path="res://scripts/store_panel.gd" id="1_i2tl6"]
 [ext_resource type="Theme" uid="uid://dueaa2r2f1b70" path="res://themes/button.tres" id="3_fws0y"]
+[ext_resource type="Texture2D" uid="uid://ffongc5ll3hd" path="res://art/coin.png" id="3_gqv7g"]
+[ext_resource type="Texture2D" uid="uid://dysj7vk2w4x1t" path="res://art/apple.png" id="4_u8i2n"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fws0y"]
 texture = ExtResource("1_hfvpq")
@@ -38,7 +40,41 @@ layout_mode = 2
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_i2tl6")
 
-[node name="Cost" type="Label" parent="HBoxContainer/details"]
+[node name="CostContainer" type="HBoxContainer" parent="HBoxContainer/details"]
+layout_mode = 2
+
+[node name="x2" type="Label" parent="HBoxContainer/details/CostContainer"]
+layout_mode = 2
+text = "Cost:"
+
+[node name="CoinContainer" type="HBoxContainer" parent="HBoxContainer/details/CostContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/details/CostContainer/CoinContainer"]
+layout_mode = 2
+texture = ExtResource("3_gqv7g")
+expand_mode = 2
+
+[node name="x" type="Label" parent="HBoxContainer/details/CostContainer/CoinContainer"]
+layout_mode = 2
+text = "x"
+
+[node name="Cost" type="Label" parent="HBoxContainer/details/CostContainer/CoinContainer"]
+layout_mode = 2
+
+[node name="FoodContainer" type="HBoxContainer" parent="HBoxContainer/details/CostContainer"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/details/CostContainer/FoodContainer"]
+layout_mode = 2
+texture = ExtResource("4_u8i2n")
+expand_mode = 2
+
+[node name="x" type="Label" parent="HBoxContainer/details/CostContainer/FoodContainer"]
+layout_mode = 2
+text = "x"
+
+[node name="FoodCost" type="Label" parent="HBoxContainer/details/CostContainer/FoodContainer"]
 layout_mode = 2
 
 [node name="Desc" type="Label" parent="HBoxContainer/details"]

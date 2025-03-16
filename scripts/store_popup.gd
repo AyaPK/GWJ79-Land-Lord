@@ -12,7 +12,8 @@ func _ready() -> void:
 			items.add_child(store_panel)
 			store_panel.icon.texture = load(Buyables.buyables[buyable]["icon"])
 			store_panel.item_name.text = buyable
-			store_panel.cost.text = "Cost: "+str(Buyables.buyables[buyable]["cost"])
+			store_panel.cost.text = str(Buyables.buyables[buyable]["cost"])
+			store_panel.food_cost.text = str(Buyables.buyables[buyable]["food_cost"])
 			store_panel.desc.text = Buyables.buyables[buyable]["description"]
 			store_panel.resource = Buyables.buyables[buyable]["path"]
 	var close_button: Button = CLOSE_BUTTON.instantiate()

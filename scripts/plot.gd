@@ -4,6 +4,7 @@ const EMPTY_PLOT = preload("res://scenes/plots/empty_plot.tscn")
 
 var grid_position: Vector2
 var hovered: bool = false
+var plotname: String
 @export var destroyable: bool = false
 
 @export var icon: Texture

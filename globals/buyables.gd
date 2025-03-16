@@ -5,6 +5,7 @@ var buyables: Dictionary = {
 		"path": "res://scenes/plots/castle_plot.tscn",
 		"available": true,
 		"cost": 0,
+		"food_cost": 0,
 		"icon": "res://art/plot_icons/castle.png",
 		"description": "Your first purchase!\nTaxes Citizens to generate a modest amount of gold.\nClick it to generate gold faster!"
 	},
@@ -12,6 +13,7 @@ var buyables: Dictionary = {
 		"path": "res://scenes/plots/lake_plot.tscn",
 		"available": false,
 		"cost": 25,
+		"food_cost": 0,
 		"icon": "res://art/plot_icons/lake.png",
 		"description": "Provides water to nearby areas"
 	},
@@ -19,13 +21,15 @@ var buyables: Dictionary = {
 		"path": "res://scenes/plots/village_plot.tscn",
 		"available": false,
 		"cost": 50,
+		"food_cost": 0,
 		"icon": "res://art/plot_icons/village.png",
 		"description": "Provides homes for 10 new citizens"
 	},
 	"Town": {
 		"path": "res://scenes/plots/town_plot.tscn",
 		"available": false,
-		"cost": 500,
+		"cost": 250,
+		"food_cost": 50,
 		"icon": "res://art/plot_icons/town.png",
 		"description": "Provides homes for 50 new citizens"
 	},
@@ -33,6 +37,7 @@ var buyables: Dictionary = {
 		"path": "res://scenes/plots/store_plot.tscn",
 		"available": false,
 		"cost": 400,
+		"food_cost": 0,
 		"icon": "res://art/plot_icons/store.png",
 		"description": "Sells food to nearby villages"
 	},
@@ -40,6 +45,7 @@ var buyables: Dictionary = {
 		"path": "res://scenes/plots/farm_plot.tscn",
 		"available": false,
 		"cost": 500,
+		"food_cost": 0,
 		"icon": "res://art/plot_icons/farm.png",
 		"description": "Creates food for your citizens\nNeeds water to grow crops"
 	}
