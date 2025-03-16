@@ -11,7 +11,7 @@ func _ready() -> void:
 func update_grid_pos() -> void:
 	grid_position = Vector2(global_position.x/64, global_position.y/64)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$HoverRect.visible = hovered
 
 func _on_mouse_entered() -> void:

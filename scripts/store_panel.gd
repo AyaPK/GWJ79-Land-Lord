@@ -19,10 +19,9 @@ func _on_buy_button_pressed() -> void:
 	Globals.hovered_tile.queue_free()
 	for node in get_tree().get_nodes_in_group("store_scenes"):
 		node.queue_free()
-	get_tree().get_first_node_in_group("main_scene").generate_locked_tiles(scene.grid_position)
 	Globals.hovering_paused = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Globals.money < int(cost.text):
 		buy_button.disabled = true
 		buy_button.text = ""

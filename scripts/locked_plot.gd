@@ -13,7 +13,7 @@ func _input(_event: InputEvent) -> void:
 		_buy()
 
 func _buy() -> void:
-	Globals.current_cost = (50 * ((Globals.owned*1.4)+1))
+	Globals.current_cost = floori((50 * ((Globals.owned*1.4)+1)))
 	if Globals.money >= Globals.current_cost:
 		Globals.hovering_paused = true
 		hovered = false
@@ -31,4 +31,5 @@ func _confirm_buy() -> void:
 	Globals.grid[grid_position] = "empty"
 	Globals.owned += 1
 	get_parent().add_child(plot)
+	get_tree().get_first_node_in_group("main_scene").generate_locked_tiles(plot.grid_position)
 	queue_free()

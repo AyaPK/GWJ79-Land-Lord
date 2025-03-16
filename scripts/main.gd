@@ -23,6 +23,5 @@ func generate_locked_tiles(center: Vector2) -> void:
 			locked_scene.global_position = Vector2(pos.x*64, pos.y*64)
 			locked_scene.update_grid_pos()
 
-
 func _on_node_success() -> void:
 	Globals.money += 10000

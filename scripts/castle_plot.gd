@@ -16,7 +16,7 @@ func _ready() -> void:
 	Buyables.buyables["Lake"]["available"] = true
 	Buyables.buyables["Village"]["available"] = true
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if progress.value < progress.max_value:
 		progress.value += coin_speed
 	else:
@@ -26,6 +26,6 @@ func _process(delta: float) -> void:
 func update_grid_pos() -> void:
 	grid_position = Vector2(global_position.x/64, global_position.y/64)
 
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("click") and hovered:
 		progress.value += click_strength

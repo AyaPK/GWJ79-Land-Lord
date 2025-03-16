@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_syd1t"]
 size = Vector2(64, 64)
 
-[node name="EmptyPlot" type="Area2D"]
+[node name="EmptyPlot" type="Area2D" groups=["plots"]]
 script = ExtResource("1_uwfus")
 
 [node name="TextureRect" type="TextureRect" parent="."]

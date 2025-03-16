@@ -485,7 +485,7 @@ sources/2 = SubResource("TileSetAtlasSource_ojh5m")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_syd1t"]
 size = Vector2(64, 64)
 
-[node name="VillagePlot" type="Area2D"]
+[node name="VillagePlot" type="Area2D" groups=["plots"]]
 script = ExtResource("1_y4s45")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]

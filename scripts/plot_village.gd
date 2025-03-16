@@ -4,7 +4,7 @@ func _ready() -> void:
 	$HoverRect.hide()
 	Globals.population += 10
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _input(event: InputEvent) -> void:

@@ -97,8 +97,6 @@ func _validate_property(property: Dictionary) -> void:
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
-	print("aaaa")
-	
 	if controller_mode:
 		if len(code_override_controller) > 0:
 			_relevant_code_controller = code_override_controller
@@ -149,7 +147,6 @@ func _code_checker(event: InputEvent) -> void:
 	else:
 		_successful_presses = 0
 	
-	print(_successful_presses)
 	if len(actual_code) == _successful_presses:
 		success.emit()
 		_successful_presses = 0

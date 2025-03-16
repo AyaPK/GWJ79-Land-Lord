@@ -19,10 +19,6 @@ func _on_mouse_exited() -> void:
 		$HoverRect.hide()
 		$Button.hide()
 		hovered = false
-#
-#func _input(event: InputEvent) -> void:
-	#if Input.is_action_just_pressed("click") and hovered:
-		#print(grid_position)
 
 func _on_button_pressed() -> void:
 	Globals.hovering_paused = true
