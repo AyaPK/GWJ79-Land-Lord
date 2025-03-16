@@ -12,6 +12,16 @@ func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("click") and hovered:
 		_buy()
 
+func _process(delta: float) -> void:
+	if !Globals.hovering_paused:
+		$HoverRect.visible = hovered
+	if hovered:
+		Globals.current_cost = floori((50 * ((Globals.owned*1.4)+1)))
+		$cost/Label.text = str(Globals.current_cost)
+		$cost.show()
+	else:
+		$cost.hide()
+
 func _buy() -> void:
 	Globals.current_cost = floori((50 * ((Globals.owned*1.4)+1)))
 	if Globals.money >= Globals.current_cost:

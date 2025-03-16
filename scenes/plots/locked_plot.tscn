@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bm0ht6fosge6u"]
+[gd_scene load_steps=6 format=3 uid="uid://bm0ht6fosge6u"]
 
-[ext_resource type="Script" uid="uid://cn08r05snn5sa" path="res://scripts/locked_plot.gd" id="1_an542"]
+[ext_resource type="Script" uid="uid://cn08r05snn5sa" path="res://scripts/plots/locked_plot.gd" id="1_an542"]
 [ext_resource type="Texture2D" uid="uid://dhqkkwlrverhs" path="res://art/lockedrect.png" id="2_h6pig"]
 [ext_resource type="Texture2D" uid="uid://cx0gtjolk26x5" path="res://art/lock_sprite.png" id="3_mq368"]
+[ext_resource type="Texture2D" uid="uid://ffongc5ll3hd" path="res://art/coin.png" id="4_ella8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_an542"]
 size = Vector2(64, 64)
@@ -28,6 +29,23 @@ texture = ExtResource("3_mq368")
 offset_right = 64.0
 offset_bottom = 64.0
 color = Color(0.137255, 0.180392, 0.0313726, 0.545098)
+
+[node name="cost" type="HBoxContainer" parent="."]
+offset_left = 1.0
+offset_top = 43.0
+offset_right = 62.0
+offset_bottom = 65.0
+
+[node name="TextureRect" type="TextureRect" parent="cost"]
+layout_mode = 2
+texture = ExtResource("4_ella8")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="cost"]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 13
+text = "000000"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

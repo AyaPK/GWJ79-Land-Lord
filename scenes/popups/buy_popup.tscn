@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://yh3mub4ae71d" path="res://art/menuRect.png" id="1_1uc64"]
 [ext_resource type="Theme" uid="uid://dueaa2r2f1b70" path="res://themes/button.tres" id="2_1uc64"]
-[ext_resource type="Script" path="res://scripts/buy_popup.gd" id="2_myfq5"]
+[ext_resource type="Script" uid="uid://cshi5o4u4mv1r" path="res://scripts/buy_popup.gd" id="2_myfq5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_afhen"]
 texture = ExtResource("1_1uc64")
