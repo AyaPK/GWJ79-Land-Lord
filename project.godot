@@ -36,6 +36,10 @@ main_scene=""
 store_scenes=""
 plots=""
 
+[gui]
+
+theme/custom_font="uid://b3wqx6rm20v4s"
+
 [input]
 
 move_left={
