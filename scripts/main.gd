@@ -15,7 +15,7 @@ func generate_locked_tiles(center: Vector2) -> void:
 	for x in range(-1, 2):
 		for y in range(-1, 2):
 			var pos: Vector2 = Vector2(center.x+x, center.y+y)
-			if pos == center or pos in Globals.grid:
+			if pos == center or pos in Globals.grid or pos.x < -18 or pos.y > 15 or pos.x > 17 or pos.y < -16:
 				continue
 			var locked_scene: LockedPlot = PLOT.instantiate()
 			get_tree().get_first_node_in_group("main_scene").add_child(locked_scene)
