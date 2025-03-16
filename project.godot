@@ -14,7 +14,9 @@ config/name="GWJ79"
 run/main_scene="uid://cc44gor6xhfp8"
 config/features=PackedStringArray("4.4", "Forward Plus")
 run/max_fps=60
+boot_splash/image="uid://byy28c4q2lsfg"
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=100
 
 [autoload]
 
