@@ -22,8 +22,7 @@ func _process(_delta: float) -> void:
 	else:
 		Globals.money += coin_val * Globals.population
 		progress.value = 0
-		var sign: String = "+" if coin_val * Globals.population >= 0 else "-"
-		$output.amount.text = sign+str(coin_val * Globals.population)
+		$output.amount.text = "+"+str(coin_val * Globals.population)
 		$output.animation.play("anim")
 
 func update_grid_pos() -> void:
