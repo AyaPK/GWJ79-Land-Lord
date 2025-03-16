@@ -1,6 +1,7 @@
 class_name Level extends Node2D
 
 const PLOT = preload("res://scenes/plots/locked_plot.tscn")
+const EXPLOSION = preload("res://scenes/explosion.tscn")
 
 func _ready() -> void:
 	for x in range(0, 64, 64):
@@ -25,3 +26,12 @@ func generate_locked_tiles(center: Vector2) -> void:
 
 func _on_node_success() -> void:
 	Globals.money += 10000
+
+func play_explosion(gridpos: Vector2) -> void:
+	var explosion: GPUParticles2D = EXPLOSION.instantiate()
+	var pos: Vector2 = Vector2(gridpos.x * 64 + 32, gridpos.y * 64 + 32)
+	explosion.global_position = pos
+	add_child(explosion)
+	explosion.emitting = true
+	await explosion.finished
+	explosion.queue_free()

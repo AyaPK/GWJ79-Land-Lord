@@ -35,4 +35,5 @@ func _input(_event: InputEvent) -> void:
 			get_tree().get_first_node_in_group("main_scene").add_child(empty_plot)
 			empty_plot.global_position = global_position
 			empty_plot.update_grid_pos()
+			get_tree().get_first_node_in_group("main_scene").play_explosion(grid_position)
 			queue_free()
