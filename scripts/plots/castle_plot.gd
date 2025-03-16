@@ -28,4 +28,11 @@ func update_grid_pos() -> void:
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("click") and hovered:
-		progress.value += click_strength
+		if Globals.destroy_mode and destroyable:
+			var empty_plot: EmptyPlot = EMPTY_PLOT.instantiate()
+			get_tree().get_first_node_in_group("main_scene").add_child(empty_plot)
+			empty_plot.global_position = global_position
+			empty_plot.update_grid_pos()
+			queue_free()
+		else:
+			progress.value += click_strength

@@ -2,7 +2,6 @@ class_name LockedPlot extends Plot
 
 var cost: int = 50
 
-const EMPTY_PLOT = preload("res://scenes/plots/empty_plot.tscn")
 const BUY_POPUP = preload("res://scenes/popups/buy_popup.tscn")
 
 func _ready() -> void:
@@ -12,7 +11,7 @@ func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("click") and hovered:
 		_buy()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if !Globals.hovering_paused:
 		$HoverRect.visible = hovered
 	if hovered:

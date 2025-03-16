@@ -21,6 +21,7 @@ func _process(delta: float) -> void:
 			progress.value = 0
 
 func _input(event: InputEvent) -> void:
+	super(event)
 	if Input.is_action_just_pressed("click") and hovered:
 		pass
 
