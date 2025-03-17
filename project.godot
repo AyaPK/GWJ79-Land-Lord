@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GWJ79"
-run/main_scene="uid://cc44gor6xhfp8"
+run/main_scene="uid://d3ix0v2fl0xaa"
 config/features=PackedStringArray("4.4", "Forward Plus")
 run/max_fps=60
 boot_splash/image="uid://byy28c4q2lsfg"
@@ -45,6 +45,7 @@ plots=""
 [gui]
 
 theme/custom_font="uid://b3wqx6rm20v4s"
+theme/default_font_antialiasing=0
 
 [input]
 
