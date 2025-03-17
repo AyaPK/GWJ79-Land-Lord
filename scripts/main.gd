@@ -38,6 +38,8 @@ func generate_locked_tiles(center: Vector2) -> void:
 
 func _on_node_success() -> void:
 	Globals.money += 10000
+	Globals.food += 200
+	Globals.iron += 200
 
 func play_explosion(gridpos: Vector2) -> void:
 	var explosion: GPUParticles2D = EXPLOSION.instantiate()
