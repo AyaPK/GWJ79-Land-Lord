@@ -1,6 +1,7 @@
 class_name PlotTemplate extends Plot
 
 func _ready() -> void:
+	super()
 	$HoverRect.hide()
 
 func _process(delta: float) -> void:

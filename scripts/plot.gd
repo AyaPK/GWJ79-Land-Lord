@@ -10,6 +10,8 @@ var plotname: String
 @export var icon: Texture
 
 func _ready() -> void:
+	mouse_entered.connect(_on_mouse_entered)
+	mouse_exited.connect(_on_mouse_exited)
 	$HoverRect.hide()
 
 func update_grid_pos() -> void:
@@ -47,3 +49,12 @@ func _on_build() -> void:
 
 func _on_destroy() -> void:
 	pass
+	
+func _notification(what: int) -> void:
+	match what:
+		NOTIFICATION_PREDELETE:
+			on_predelete()
+
+func on_predelete() -> void:
+	mouse_entered.disconnect(_on_mouse_entered)
+	mouse_exited.disconnect(_on_mouse_exited)

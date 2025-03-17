@@ -7,6 +7,7 @@ var coin_val: int = 2
 var click_strength: int = 50
 
 func _ready() -> void:
+	super()
 	$HoverRect.hide()
 	if Buyables.buyables["Castle"]["cost"] == 0:
 		Buyables.buyables["Castle"]["cost"] = 5000

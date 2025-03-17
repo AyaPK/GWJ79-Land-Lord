@@ -1,6 +1,7 @@
 class_name EmptyPlot extends Plot
 
 func _ready() -> void:
+	super()
 	$HoverRect.hide()
 	$Button.hide()
 

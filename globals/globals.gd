@@ -14,3 +14,5 @@ var hovering_paused: bool = false
 var zooming_paused: bool = false
 var destroy_mode: bool = false
 var hovered_tile: Plot
+
+var new_game: bool = true

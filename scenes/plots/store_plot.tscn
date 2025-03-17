@@ -529,6 +529,3 @@ icon = ExtResource("8_5fsym")
 [node name="output2" parent="." instance=ExtResource("7_g1qnh")]
 icon = ExtResource("9_8hmf6")
 y_offset = 16
-
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

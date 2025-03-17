@@ -10,6 +10,7 @@ var coin_val: int = 50
 var click_strength: int = 200
 
 func _ready() -> void:
+	super()
 	$HoverRect.hide()
 	if !Buyables.is_unlocked("Town"):
 		Ui.unlock_item("Town")

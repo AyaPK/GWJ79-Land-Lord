@@ -5,6 +5,7 @@ var cost: int = 50
 const BUY_POPUP = preload("res://scenes/popups/buy_popup.tscn")
 
 func _ready() -> void:
+	super()
 	$HoverRect.hide()
 
 func _input(_event: InputEvent) -> void:

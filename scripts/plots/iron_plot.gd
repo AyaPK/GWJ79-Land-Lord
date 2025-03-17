@@ -6,6 +6,7 @@ var iron_speed: int = 1
 var iron_amount: int = 1
 
 func _ready() -> void:
+	super()
 	$HoverRect.hide()
 
 func _process(delta: float) -> void:

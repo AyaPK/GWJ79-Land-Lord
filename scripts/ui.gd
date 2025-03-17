@@ -1,5 +1,8 @@
 extends CanvasLayer
 
+var createdPackage:PackedScene
+const saveFile: = "res://SavedPackage.tscn"
+
 const BOMB = preload("res://art/bomb.png")
 const BOMB_SELECTED = preload("res://art/bomb_selected.png")
 @onready var unlocked_icon: TextureRect = $UnlockedContainer/VBoxContainer/UnlockedIcon
@@ -43,3 +46,21 @@ func get_item_details() -> void:
 
 func remove_unlock_from_queue() -> void:
 	unlock_queue.pop_front()
+
+
+func _on_save_pressed() -> void:
+	createdPackage = SaveManager.create_package(get_tree().get_first_node_in_group("main_scene"))
+	if !createdPackage:
+		return
+	ResourceSaver.save(createdPackage, saveFile)
+
+func _on_load_pressed() -> void:
+	Globals.new_game = false
+	if !createdPackage:
+		return
+	var parent: Node = get_tree().get_first_node_in_group("main_scene").get_parent()
+	get_tree().get_first_node_in_group("main_scene").queue_free()
+	
+	var packageInstance: Node = createdPackage.instantiate()
+	
+	parent.add_child(packageInstance)

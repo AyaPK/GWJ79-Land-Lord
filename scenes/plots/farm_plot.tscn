@@ -648,6 +648,3 @@ texture_progress = ExtResource("7_cdrou")
 
 [node name="output_host" parent="." instance=ExtResource("8_cdrou")]
 icon = ExtResource("9_fu87s")
-
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

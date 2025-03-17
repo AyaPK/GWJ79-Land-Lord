@@ -1,6 +1,7 @@
 class_name PlotVillage extends Plot
 
 func _ready() -> void:
+	super()
 	$HoverRect.hide()
 	Globals.population += 10
 	if !Buyables.is_unlocked("Lake"):

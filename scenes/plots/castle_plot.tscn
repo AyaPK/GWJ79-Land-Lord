@@ -325,6 +325,3 @@ texture_over = ExtResource("6_k7jfj")
 texture_progress = ExtResource("7_3ihv4")
 
 [node name="output" parent="." instance=ExtResource("8_4hfnc")]
-
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

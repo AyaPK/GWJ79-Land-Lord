@@ -6,6 +6,7 @@ var food_speed: int = 1
 var food_val: int = 1
 
 func _ready() -> void:
+	super()
 	$HoverRect.hide()
 	if !Buyables.is_unlocked("Iron Mine"):
 		Ui.unlock_item("Iron Mine")
