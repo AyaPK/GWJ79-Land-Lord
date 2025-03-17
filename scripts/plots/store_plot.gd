@@ -6,7 +6,7 @@ class_name StorePlot extends Plot
 @onready var output_2: OutputAnim = $output2
 
 var coin_speed: int = 1
-var coin_val: int = 20
+var coin_val: int = 50
 var click_strength: int = 200
 
 func _ready() -> void:
