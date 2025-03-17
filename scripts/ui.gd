@@ -7,6 +7,7 @@ func _process(_delta: float) -> void:
 	$HBoxContainer/VBoxContainer/coins/CoinAmount.text = str(Globals.money)
 	$HBoxContainer/VBoxContainer/population/PopAmount.text = str(Globals.population)
 	$HBoxContainer/VBoxContainer/food/FoodAmount.text = str(Globals.food)
+	$HBoxContainer/VBoxContainer/iron/IronAmount.text = str(Globals.iron)
 
 func _on_destroy_button_pressed() -> void:
 	Globals.destroy_mode = !Globals.destroy_mode
