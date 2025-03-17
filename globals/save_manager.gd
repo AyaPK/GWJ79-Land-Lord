@@ -10,6 +10,7 @@ var current_save: Dictionary = {
 	food = 0,
 	iron = 0,
 	current_cost = 0,
+	owned = 0,
 	buyables = {},
 	grid = {},
 }
@@ -32,6 +33,7 @@ func save_stats() -> void:
 	current_save["buyables"] = Buyables.buyables
 	current_save["grid"] = Globals.grid
 	current_save["current_cost"] = Globals.current_cost
+	current_save["owned"] = Globals.owned
 	var file := FileAccess.open(saveStats, FileAccess.WRITE)
 	var save_json: String = JSON.stringify(current_save)
 	file.store_line(save_json)
@@ -49,7 +51,8 @@ func load_stats() -> void:
 	Globals.food = current_save["food"]
 	Globals.iron = current_save["iron"]
 	Buyables.buyables = current_save["buyables"]
-	Globals.current_cost = current_save["current_cost"]
+	Globals.owned = current_save["current_cost"]
+	Globals.owned = current_save["owned"]
 	Globals.grid = {}
 
 	for key: String in current_save["grid"]:
