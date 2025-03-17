@@ -13,6 +13,8 @@ var current_save: Dictionary = {
 	owned = 0,
 	buyables = {},
 	grid = {},
+	buyable_upgrades = {},
+	property_upgrades = {},
 }
 
 func create_package(_node:Node)->PackedScene:
@@ -34,6 +36,8 @@ func save_stats() -> void:
 	current_save["grid"] = Globals.grid
 	current_save["current_cost"] = Globals.current_cost
 	current_save["owned"] = Globals.owned
+	current_save["buyable_upgrades"] = Buyables.upgrades
+	current_save["property_upgrades"] = Property.upgrades
 	var file := FileAccess.open(saveStats, FileAccess.WRITE)
 	var save_json: String = JSON.stringify(current_save)
 	file.store_line(save_json)
@@ -53,6 +57,8 @@ func load_stats() -> void:
 	Buyables.buyables = current_save["buyables"]
 	Globals.owned = current_save["current_cost"]
 	Globals.owned = current_save["owned"]
+	Property.upgrades = current_save["property_upgrades"]
+	Buyables.upgrades = current_save["buyable_upgrades"]
 	Globals.grid = {}
 
 	for key: String in current_save["grid"]:
