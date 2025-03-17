@@ -47,6 +47,7 @@ func remove_unlock_from_queue() -> void:
 	unlock_queue.pop_front()
 
 func _on_save_pressed() -> void:
+	$saved.play("anim")
 	SaveManager.save_stats()
 	createdPackage = SaveManager.create_package(get_tree().get_first_node_in_group("main_scene"))
 	if !createdPackage:

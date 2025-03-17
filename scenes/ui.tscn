@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ceqtybdnokvnc"]
+[gd_scene load_steps=24 format=3 uid="uid://ceqtybdnokvnc"]
 
 [ext_resource type="Script" uid="uid://dymt5knkf0js5" path="res://scripts/ui.gd" id="1_nt7q6"]
 [ext_resource type="Texture2D" uid="uid://ffongc5ll3hd" path="res://art/coin.png" id="2_x4jx1"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://cge5a8pd357ug" path="res://art/bomb.png" id="8_ktti3"]
 [ext_resource type="Texture2D" uid="uid://o3yr6xkcwgdj" path="res://art/plot_icons/castle.png" id="10_7dvkv"]
 [ext_resource type="Texture2D" uid="uid://cip4rbtuegxx0" path="res://art/unlock_panel.png" id="10_vdcm2"]
+[ext_resource type="Texture2D" uid="uid://26k762syal7b" path="res://art/save.png" id="12_6rmj2"]
+[ext_resource type="Texture2D" uid="uid://dbiblekxmhv37" path="res://art/save_hovered.png" id="13_vsj0x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4jx1"]
 bg_color = Color(0, 0, 0, 0.231373)
@@ -85,6 +87,67 @@ tracks/1/keys = {
 _data = {
 &"RESET": SubResource("Animation_vdcm2"),
 &"anim": SubResource("Animation_7dvkv")
+}
+
+[sub_resource type="Animation" id="Animation_vsj0x"]
+resource_name = "anim"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("game saved:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.47),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(123, 533), Vector2(123, 500)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("game saved:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qsv74"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("game saved:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(123, 533)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("game saved:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h1mc3"]
+_data = {
+&"RESET": SubResource("Animation_qsv74"),
+&"anim": SubResource("Animation_vsj0x")
 }
 
 [node name="UI" type="CanvasLayer"]
@@ -253,22 +316,32 @@ libraries = {
 &"": SubResource("AnimationLibrary_6rmj2")
 }
 
-[node name="save" type="Button" parent="."]
-offset_left = 845.0
-offset_top = 40.0
-offset_right = 1119.0
-offset_bottom = 113.0
-text = "save"
+[node name="save" type="TextureButton" parent="."]
+offset_left = 135.0
+offset_top = 554.0
+offset_right = 151.0
+offset_bottom = 570.0
+scale = Vector2(5, 5)
+texture_normal = ExtResource("12_6rmj2")
+texture_hover = ExtResource("13_vsj0x")
 
-[node name="load" type="Button" parent="."]
-offset_left = 845.0
-offset_top = 119.0
-offset_right = 1119.0
-offset_bottom = 192.0
-text = "load"
+[node name="game saved" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 123.0
+offset_top = 533.0
+offset_right = 225.0
+offset_bottom = 553.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+text = "Game Saved!"
+
+[node name="saved" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_h1mc3")
+}
 
 [connection signal="mouse_entered" from="DestroyContainer/DestroyButton" to="." method="_on_destroy_button_mouse_entered"]
 [connection signal="mouse_exited" from="DestroyContainer/DestroyButton" to="." method="_on_destroy_button_mouse_exited"]
 [connection signal="pressed" from="DestroyContainer/DestroyButton" to="." method="_on_destroy_button_pressed"]
 [connection signal="pressed" from="save" to="." method="_on_save_pressed"]
-[connection signal="pressed" from="load" to="." method="_on_load_pressed"]
