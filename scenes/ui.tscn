@@ -328,9 +328,9 @@ texture_hover = ExtResource("13_vsj0x")
 [node name="game saved" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
 offset_left = 123.0
-offset_top = 533.0
+offset_top = 500.0
 offset_right = 225.0
-offset_bottom = 553.0
+offset_bottom = 520.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
@@ -341,7 +341,15 @@ libraries = {
 &"": SubResource("AnimationLibrary_h1mc3")
 }
 
+[node name="upgrades" type="Button" parent="."]
+offset_left = 23.0
+offset_top = 280.0
+offset_right = 111.0
+offset_bottom = 308.0
+text = "Upgrades"
+
 [connection signal="mouse_entered" from="DestroyContainer/DestroyButton" to="." method="_on_destroy_button_mouse_entered"]
 [connection signal="mouse_exited" from="DestroyContainer/DestroyButton" to="." method="_on_destroy_button_mouse_exited"]
 [connection signal="pressed" from="DestroyContainer/DestroyButton" to="." method="_on_destroy_button_pressed"]
 [connection signal="pressed" from="save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="upgrades" to="." method="_on_upgrades_pressed"]

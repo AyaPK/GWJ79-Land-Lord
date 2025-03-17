@@ -1,6 +1,14 @@
 extends Node
 
 const STORE_POPUP = preload("res://scenes/popups/store_popup.tscn")
+const UPGRADE_POPUP = preload("res://scenes/popups/upgrade_popup.tscn")
+
+var upgrades: Dictionary = {
+	"Castle": {
+		"speed": 0,
+		"val": 0,
+	}
+}
 
 @warning_ignore("unused_signal")
 signal buy_confirmed

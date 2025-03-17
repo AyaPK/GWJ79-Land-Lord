@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=3 uid="uid://datryow0ms3fy"]
+
+[ext_resource type="Texture2D" uid="uid://cxjct80p8gltr" path="res://art/rectbutton.png" id="1_jav4r"]
+[ext_resource type="Script" uid="uid://cmab3cvjfhp5d" path="res://scripts/upgrade_panel.gd" id="2_hiiaf"]
+[ext_resource type="Texture2D" uid="uid://ffongc5ll3hd" path="res://art/coin.png" id="3_xow10"]
+[ext_resource type="Theme" uid="uid://dueaa2r2f1b70" path="res://themes/button.tres" id="5_yht0h"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fws0y"]
+texture = ExtResource("1_jav4r")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fws0y"]
+
+[node name="UpgradePanel" type="PanelContainer" groups=["store_scenes"]]
+offset_right = 514.0
+offset_bottom = 108.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_fws0y")
+script = ExtResource("2_hiiaf")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="upgrade_name" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 20
+text = "Castle speed 1"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+alignment = 1
+
+[node name="details" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CostContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/details"]
+layout_mode = 2
+
+[node name="x2" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/details/CostContainer"]
+layout_mode = 2
+text = "Cost:"
+
+[node name="CoinContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/details/CostContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/details/CostContainer/CoinContainer"]
+layout_mode = 2
+texture = ExtResource("3_xow10")
+expand_mode = 2
+
+[node name="x" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/details/CostContainer/CoinContainer"]
+layout_mode = 2
+text = "x"
+
+[node name="Cost" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/details/CostContainer/CoinContainer"]
+layout_mode = 2
+
+[node name="Desc" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/details"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = "Does some upgrade to some plot type"
+
+[node name="buy_button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("5_yht0h")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fws0y")
+text = "Buy"
+
+[connection signal="pressed" from="HBoxContainer/buy_button" to="." method="_on_buy_button_pressed"]

@@ -4,6 +4,7 @@ var createdPackage:PackedScene
 
 const BOMB = preload("res://art/bomb.png")
 const BOMB_SELECTED = preload("res://art/bomb_selected.png")
+
 @onready var unlocked_icon: TextureRect = $UnlockedContainer/VBoxContainer/UnlockedIcon
 @onready var unlocked_name: Label = $"UnlockedContainer/VBoxContainer/Unlocked Name"
 @onready var unlock_animation: AnimationPlayer = $UnlockedContainer/UnlockAnimation
@@ -53,3 +54,7 @@ func _on_save_pressed() -> void:
 	if !createdPackage:
 		return
 	ResourceSaver.save(createdPackage, SaveManager.saveFile)
+
+func _on_upgrades_pressed() -> void:
+	var popup: UpgradePopup = Property.UPGRADE_POPUP.instantiate()
+	add_child(popup)

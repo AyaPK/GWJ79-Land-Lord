@@ -61,3 +61,14 @@ var buyables: Dictionary = {
 		"description": "Creates food for your citizens\nNeeds water to grow crops"
 	}
 }
+
+var upgrades: Array = [
+	{
+		"name": "Castle Speed 1",
+		"available": true,
+		"description": "Your castles will produce gold slightly faster",
+		"cost": 2000,
+		"eval": "increase_castle_speed(1)",
+		"next_unlock": "",
+	},
+]
