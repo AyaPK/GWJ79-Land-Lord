@@ -16,9 +16,16 @@ func _process(_delta: float) -> void:
 
 func _on_buy_button_pressed() -> void:
 	Globals.money -= int(cost.text)
-	var exp = Expression.new()
-	exp.parse(eval)
-	exp.execute([], self)
+	var expr: Expression = Expression.new()
+	expr.parse(eval)
+	expr.execute([], self)
+	for ug in Buyables.upgrades:
+		if ug["name"] == upgrade_name.text:
+			ug["available"] = false
+	if unlock != "":
+		for ug in Buyables.upgrades:
+			if ug["name"] == unlock:
+				ug["available"] = true
 	queue_free()
 
 func increase_castle_speed(amount: int) -> void:
