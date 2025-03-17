@@ -21,9 +21,9 @@ func _process(_delta: float) -> void:
 	if progress.value < progress.max_value:
 		progress.value += coin_speed + Property.upgrades["Castle"]["speed"]
 	else:
-		Globals.money += coin_val * Globals.population
+		Globals.money += floori((coin_val+Property.upgrades["Castle"]["val"]) * Globals.population)
 		progress.value = 0
-		$output.amount.text = "+"+str(coin_val * Globals.population)
+		$output.amount.text = "+"+str(floori((coin_val+Property.upgrades["Castle"]["val"]) * Globals.population))
 		$output.animation.play("anim")
 
 func update_grid_pos() -> void:

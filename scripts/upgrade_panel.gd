@@ -33,3 +33,9 @@ func increase_castle_speed(amount: int) -> void:
 
 func increase_castle_val(amount: int) -> void:
 	Property.upgrades["Castle"]["val"] += amount
+
+func increase_farm_speed(amount: int) -> void:
+	Property.upgrades["Farm"]["speed"] += amount
+
+func increase_farm_val(amount: int) -> void:
+	Property.upgrades["Farm"]["val"] += amount

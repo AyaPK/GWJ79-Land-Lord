@@ -13,9 +13,9 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if progress.value < progress.max_value:
-		progress.value += food_speed
+		progress.value += food_speed + Property.upgrades["Farm"]["speed"]
 	else:
-		var to_add: int = food_val * _find_adjacent_lakes()
+		var to_add: int = (food_val + Property.upgrades["Farm"]["val"]) * _find_adjacent_lakes()
 		Globals.food += to_add
 		progress.value = 0
 		$output_host.amount.text = "+"+str(to_add)
