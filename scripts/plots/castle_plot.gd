@@ -19,7 +19,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if progress.value < progress.max_value:
-		progress.value += coin_speed
+		progress.value += coin_speed + Property.upgrades["Castle"]["speed"]
 	else:
 		Globals.money += coin_val * Globals.population
 		progress.value = 0

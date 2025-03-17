@@ -68,7 +68,7 @@ var upgrades: Array = [
 		"available": true,
 		"description": "Your castles will produce gold slightly faster",
 		"cost": 2000,
-		"eval": "increase_castle_speed(1)",
+		"eval": "increase_castle_speed(2)",
 		"next_unlock": "Castle Speed 2",
 	},
 		{
@@ -76,7 +76,7 @@ var upgrades: Array = [
 		"available": false,
 		"description": "Your castles will produce gold much faster",
 		"cost": 10000,
-		"eval": "increase_castle_speed(2)",
+		"eval": "increase_castle_speed(3)",
 		"next_unlock": "",
 	},
 ]
