@@ -11,3 +11,6 @@ func _input(event: InputEvent) -> void:
 	super(event)
 	if Input.is_action_just_pressed("click") and hovered:
 		pass
+
+func _on_destroy() -> void:
+	Globals.population -= 50

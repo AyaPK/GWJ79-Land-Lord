@@ -37,4 +37,13 @@ func _input(_event: InputEvent) -> void:
 			empty_plot.global_position = global_position
 			empty_plot.update_grid_pos()
 			get_tree().get_first_node_in_group("main_scene").play_explosion(grid_position)
+			Globals.money += Buyables.buyables[plotname]["cost"]
+			Globals.grid[grid_position] = "Empty"
+			_on_destroy()
 			queue_free()
+
+func _on_build() -> void:
+	pass
+
+func _on_destroy() -> void:
+	pass

@@ -38,3 +38,9 @@ func _input(_event: InputEvent) -> void:
 			queue_free()
 		else:
 			progress.value += click_strength
+
+func _on_build() -> void:
+	pass
+
+func _on_destroy() -> void:
+	pass
