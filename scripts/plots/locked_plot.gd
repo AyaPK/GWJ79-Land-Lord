@@ -23,7 +23,7 @@ func _process(_delta: float) -> void:
 		$cost.hide()
 
 func _buy() -> void:
-	Globals.current_cost = floori(100 * pow(1.15, Globals.owned))
+	Globals.current_cost = floori(100 * pow(1.25, Globals.owned))
 	if Globals.money >= Globals.current_cost:
 		Globals.hovering_paused = true
 		hovered = false
