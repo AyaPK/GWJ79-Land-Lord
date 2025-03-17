@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 var createdPackage:PackedScene
-const saveFile: = "res://SavedPackage.tscn"
+const saveFile: = "user://savefile.tscn"
 
 const BOMB = preload("res://art/bomb.png")
 const BOMB_SELECTED = preload("res://art/bomb_selected.png")
@@ -47,7 +47,6 @@ func get_item_details() -> void:
 func remove_unlock_from_queue() -> void:
 	unlock_queue.pop_front()
 
-
 func _on_save_pressed() -> void:
 	createdPackage = SaveManager.create_package(get_tree().get_first_node_in_group("main_scene"))
 	if !createdPackage:
@@ -56,11 +55,14 @@ func _on_save_pressed() -> void:
 
 func _on_load_pressed() -> void:
 	Globals.new_game = false
-	if !createdPackage:
+	var check := FileAccess.open(saveFile, FileAccess.READ)
+	if !check:
+		print("None")
 		return
+	var file := ResourceLoader.load(saveFile)
 	var parent: Node = get_tree().get_first_node_in_group("main_scene").get_parent()
 	get_tree().get_first_node_in_group("main_scene").queue_free()
 	
-	var packageInstance: Node = createdPackage.instantiate()
+	var packageInstance: Node = file.instantiate()
 	
 	parent.add_child(packageInstance)
