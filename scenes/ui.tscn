@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ceqtybdnokvnc"]
+[gd_scene load_steps=19 format=3 uid="uid://ceqtybdnokvnc"]
 
 [ext_resource type="Script" uid="uid://dymt5knkf0js5" path="res://scripts/ui.gd" id="1_nt7q6"]
 [ext_resource type="Texture2D" uid="uid://ffongc5ll3hd" path="res://art/coin.png" id="2_x4jx1"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cwkaifsahfyrv" path="res://art/iron.png" id="5_cgfq5"]
 [ext_resource type="Texture2D" uid="uid://y2pop2fk618e" path="res://art/wasd.png" id="5_wm3ai"]
 [ext_resource type="Texture2D" uid="uid://cge5a8pd357ug" path="res://art/bomb.png" id="8_ktti3"]
+[ext_resource type="Texture2D" uid="uid://o3yr6xkcwgdj" path="res://art/plot_icons/castle.png" id="10_7dvkv"]
+[ext_resource type="Texture2D" uid="uid://cip4rbtuegxx0" path="res://art/unlock_panel.png" id="10_vdcm2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4jx1"]
 bg_color = Color(0, 0, 0, 0.231373)
@@ -20,6 +22,70 @@ expand_margin_right = 5.0
 expand_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ktti3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6rmj2"]
+texture = ExtResource("10_vdcm2")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="FontVariation" id="FontVariation_7dvkv"]
+variation_embolden = 0.5
+
+[sub_resource type="Animation" id="Animation_7dvkv"]
+resource_name = "anim"
+length = 4.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UnlockedContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333, 3.96667, 4.26667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(547, 669), Vector2(547, 430), Vector2(547, 430), Vector2(547, 669)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4.3),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"get_item_details"
+}, {
+"args": [],
+"method": &"remove_unlock_from_queue"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_vdcm2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UnlockedContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(547, 669)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6rmj2"]
+_data = {
+&"RESET": SubResource("Animation_vdcm2"),
+&"anim": SubResource("Animation_7dvkv")
+}
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_nt7q6")
@@ -151,6 +217,41 @@ offset_right = 40.0
 offset_bottom = 8.0
 scale = Vector2(2, 2)
 texture = ExtResource("8_ktti3")
+
+[node name="UnlockedContainer" type="PanelContainer" parent="."]
+offset_left = 547.0
+offset_top = 669.0
+offset_right = 711.0
+offset_bottom = 862.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_6rmj2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UnlockedContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Unlocked label" type="Label" parent="UnlockedContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = SubResource("FontVariation_7dvkv")
+theme_override_font_sizes/font_size = 20
+text = "NEW UNLOCK"
+horizontal_alignment = 1
+
+[node name="UnlockedIcon" type="TextureRect" parent="UnlockedContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("10_7dvkv")
+
+[node name="Unlocked Name" type="Label" parent="UnlockedContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 7
+text = "Small farm"
+horizontal_alignment = 1
+
+[node name="UnlockAnimation" type="AnimationPlayer" parent="UnlockedContainer"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_6rmj2")
+}
 
 [connection signal="mouse_entered" from="DestroyContainer/DestroyButton" to="." method="_on_destroy_button_mouse_entered"]
 [connection signal="mouse_exited" from="DestroyContainer/DestroyButton" to="." method="_on_destroy_button_mouse_exited"]

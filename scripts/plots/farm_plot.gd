@@ -7,7 +7,8 @@ var food_val: int = 1
 
 func _ready() -> void:
 	$HoverRect.hide()
-	Buyables.buyables["Iron Mine"]["available"] = true
+	if !Buyables.is_unlocked("Iron Mine"):
+		Ui.unlock_item("Iron Mine")
 
 func _process(_delta: float) -> void:
 	if progress.value < progress.max_value:

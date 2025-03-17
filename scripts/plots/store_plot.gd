@@ -11,8 +11,8 @@ var click_strength: int = 200
 
 func _ready() -> void:
 	$HoverRect.hide()
-	Buyables.buyables["Town"]["available"] = true
-
+	if !Buyables.is_unlocked("Town"):
+		Ui.unlock_item("Town")
 
 func _process(_delta: float) -> void:
 	if progress.value < progress.max_value:

@@ -1,5 +1,8 @@
 extends Node
 
+func is_unlocked(item_name: String) -> bool:
+	return buyables[item_name]["available"]
+
 var buyables: Dictionary = {
 	"Castle": {
 		"path": "res://scenes/plots/castle_plot.tscn",
@@ -31,7 +34,7 @@ var buyables: Dictionary = {
 		"cost": 50,
 		"food_cost": 0,
 		"icon": "res://art/plot_icons/village.png",
-		"description": "Provides homes for 10 new citizens"
+		"description": "Provides homes for 10 new citizens\nCitizens will buy food from nearby stores!"
 	},
 	"Town": {
 		"path": "res://scenes/plots/town_plot.tscn",
@@ -39,7 +42,7 @@ var buyables: Dictionary = {
 		"cost": 250,
 		"food_cost": 50,
 		"icon": "res://art/plot_icons/town.png",
-		"description": "Provides homes for 50 new citizens"
+		"description": "Provides homes for 50 new citizens\nEven more citizens to spend money!"
 	},
 	"Store": {
 		"path": "res://scenes/plots/store_plot.tscn",

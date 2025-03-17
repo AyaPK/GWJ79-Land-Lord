@@ -3,7 +3,10 @@ class_name PlotVillage extends Plot
 func _ready() -> void:
 	$HoverRect.hide()
 	Globals.population += 10
-	Buyables.buyables["Store"]["available"] = true
+	if !Buyables.is_unlocked("Lake"):
+		Ui.unlock_item("Lake")
+	if !Buyables.is_unlocked("Store"):
+		Ui.unlock_item("Store")
 
 func _process(_delta: float) -> void:
 	pass

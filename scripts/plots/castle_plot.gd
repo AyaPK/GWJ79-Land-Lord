@@ -13,8 +13,8 @@ func _ready() -> void:
 	else:
 		Buyables.buyables["Castle"]["cost"] *= 10
 	Buyables.buyables["Castle"]["description"] = "Taxes citizens to generate a modest amount of gold.\nClick it to generate gold faster!"
-	Buyables.buyables["Lake"]["available"] = true
-	Buyables.buyables["Village"]["available"] = true
+	if !Buyables.is_unlocked("Village"):
+		Ui.unlock_item("Village")
 
 func _process(_delta: float) -> void:
 	if progress.value < progress.max_value:
