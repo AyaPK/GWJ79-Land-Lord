@@ -18,7 +18,17 @@ var _last_drag_position: Vector2 = Vector2.ZERO
 var _last_drag_time: float = 0.0
 
 func _ready() -> void:
-	set_physics_process(true)
+	if Globals.new_game:
+		set_physics_process(true)
+	else:
+		_target_zoom = 4.0
+		_velocity = Vector2.ZERO
+		_is_dragging = false
+		_touch_points = {}
+		_last_pinch_distance = 0.0
+		_last_drag_position = Vector2.ZERO
+		_last_drag_time = 0.0
+		set_physics_process(true)
 
 func _physics_process(delta: float) -> void:
 	zoom = lerp(zoom, _target_zoom * Vector2.ONE, ZOOM_RATE * delta)

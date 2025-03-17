@@ -22,5 +22,4 @@ func _on_no_pressed() -> void:
 		Property.buy_confirmed.disconnect(callable["callable"])
 	for _c in get_tree().get_nodes_in_group("plots"):
 		_c.hovered = false
-	Globals.hovered_tile.hovered = false
 	queue_free()

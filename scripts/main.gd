@@ -12,8 +12,20 @@ func _ready() -> void:
 				add_child(plot)
 				plot.update_grid_pos()
 				Globals.grid[Vector2(x, y)] = "locked"
+	elif Globals.load_game:
+		Globals.load_game = false
+		Ui.show()
+		await get_tree().process_frame
+		var file := ResourceLoader.load(SaveManager.saveFile)
+		var parent: Node = get_tree().get_first_node_in_group("main_scene").get_parent()
+		get_tree().get_first_node_in_group("main_scene").queue_free()
+		var packageInstance: Node = file.instantiate()
+		parent.add_child(packageInstance)
+		for _c: Plot in get_tree().get_nodes_in_group("plots"):
+			_c.update_grid_pos()
 
 func generate_locked_tiles(center: Vector2) -> void:
+	print(center)
 	for x in range(-1, 2):
 		for y in range(-1, 2):
 			var pos: Vector2 = Vector2(center.x+x, center.y+y)

@@ -16,3 +16,4 @@ var destroy_mode: bool = false
 var hovered_tile: Plot
 
 var new_game: bool = true
+var load_game: bool = false
