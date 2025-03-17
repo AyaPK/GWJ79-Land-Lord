@@ -25,7 +25,6 @@ func _ready() -> void:
 			_c.update_grid_pos()
 
 func generate_locked_tiles(center: Vector2) -> void:
-	print(center)
 	for x in range(-1, 2):
 		for y in range(-1, 2):
 			var pos: Vector2 = Vector2(center.x+x, center.y+y)
