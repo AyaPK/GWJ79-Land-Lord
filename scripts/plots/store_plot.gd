@@ -17,14 +17,14 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if progress.value < progress.max_value:
-		progress.value += coin_speed
+		progress.value += coin_speed + Property.upgrades["Store"]["speed"]
 	else:
 		if Globals.food > 0:
 			var to_sell: int = clamp(_find_adjacent_residences(), 0, Globals.food)
-			Globals.money += coin_val * to_sell
+			Globals.money += (coin_val+Property.upgrades["Store"]["val"]) * to_sell
 			Globals.food -= to_sell
 			progress.value = 0
-			$output.amount.text = "+"+str(coin_val * to_sell)
+			$output.amount.text = "+"+str((coin_val+Property.upgrades["Store"]["val"]) * to_sell)
 			$output.animation.play("anim")
 			$output2.amount.text = "-"+str(to_sell)
 			$output2.animation.play("anim")

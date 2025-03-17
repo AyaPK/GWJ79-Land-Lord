@@ -11,6 +11,10 @@ var upgrades: Dictionary = {
 	"Farm": {
 		"speed": 0,
 		"val": 0,
+	},
+	"Store": {
+		"speed": 0,
+		"val": 0,
 	}
 }
 
