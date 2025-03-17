@@ -19,7 +19,7 @@ var buyables: Dictionary = {
 	},
 	"Iron Mine": {
 		"path": "res://scenes/plots/iron_plot.tscn",
-		"available": true,
+		"available": false,
 		"cost": 1000,
 		"food_cost": 25,
 		"icon": "res://art/plot_icons/iron_mine.png",
