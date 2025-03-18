@@ -22,6 +22,7 @@ func _on_buy_button_pressed() -> void:
 	_take_money()
 	for node in get_tree().get_nodes_in_group("store_scenes"):
 		node.queue_free()
+	Ui.place.play()
 	Globals.hovering_paused = false
 
 func _process(_delta: float) -> void:
@@ -37,3 +38,6 @@ func _process(_delta: float) -> void:
 func _take_money() -> void:
 	Globals.money -= int(cost.text)
 	Globals.food -= int(food_cost.text)
+
+func _on_buy_button_mouse_entered() -> void:
+	Ui.boop.play()

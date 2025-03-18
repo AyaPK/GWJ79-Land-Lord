@@ -37,6 +37,7 @@ func generate_locked_tiles(center: Vector2) -> void:
 			locked_scene.update_grid_pos()
 
 func _on_node_success() -> void:
+	Ui.cheated.play()
 	Globals.money += 10000
 	Globals.food += 200
 	Globals.iron += 200

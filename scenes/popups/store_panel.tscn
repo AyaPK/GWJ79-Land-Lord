@@ -87,4 +87,5 @@ theme = ExtResource("3_fws0y")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_fws0y")
 text = "Buy"
 
+[connection signal="mouse_entered" from="HBoxContainer/buy_button" to="." method="_on_buy_button_mouse_entered"]
 [connection signal="pressed" from="HBoxContainer/buy_button" to="." method="_on_buy_button_pressed"]

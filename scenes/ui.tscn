@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ceqtybdnokvnc"]
+[gd_scene load_steps=32 format=3 uid="uid://ceqtybdnokvnc"]
 
 [ext_resource type="Script" uid="uid://dymt5knkf0js5" path="res://scripts/ui.gd" id="1_nt7q6"]
 [ext_resource type="Texture2D" uid="uid://ffongc5ll3hd" path="res://art/coin.png" id="2_x4jx1"]
@@ -15,6 +15,12 @@
 [ext_resource type="Texture2D" uid="uid://dbiblekxmhv37" path="res://art/save_hovered.png" id="13_vsj0x"]
 [ext_resource type="Texture2D" uid="uid://diwwyewtx8ndn" path="res://art/upgrade.png" id="14_h1mc3"]
 [ext_resource type="Texture2D" uid="uid://cok7a6bodx08f" path="res://art/upgrade_hovered.png" id="15_cof4p"]
+[ext_resource type="AudioStream" uid="uid://ca0dt1c1hsmv" path="res://audio/sfx/ding2.wav" id="16_cof4p"]
+[ext_resource type="AudioStream" uid="uid://bf10gqqlbgd2o" path="res://audio/sfx/boop.wav" id="17_f7tlh"]
+[ext_resource type="AudioStream" uid="uid://pn2r7wv226os" path="res://audio/sfx/showstore.wav" id="18_8k7j3"]
+[ext_resource type="AudioStream" uid="uid://x2xp38ulef3j" path="res://audio/sfx/close.wav" id="19_jkdwc"]
+[ext_resource type="AudioStream" uid="uid://pss427j3er64" path="res://audio/sfx/place.wav" id="20_rlppe"]
+[ext_resource type="AudioStream" uid="uid://f8garbdt2iyx" path="res://audio/sfx/cheated.wav" id="21_ycmcx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4jx1"]
 bg_color = Color(0, 0, 0, 0.231373)
@@ -351,6 +357,24 @@ offset_bottom = 473.0
 scale = Vector2(5, 5)
 texture_normal = ExtResource("14_h1mc3")
 texture_hover = ExtResource("15_cof4p")
+
+[node name="Ding" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_cof4p")
+
+[node name="Boop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_f7tlh")
+
+[node name="Boop2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_8k7j3")
+
+[node name="Close" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_jkdwc")
+
+[node name="Place" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_rlppe")
+
+[node name="Cheated" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_ycmcx")
 
 [connection signal="mouse_entered" from="DestroyContainer/DestroyButton" to="." method="_on_destroy_button_mouse_entered"]
 [connection signal="mouse_exited" from="DestroyContainer/DestroyButton" to="." method="_on_destroy_button_mouse_exited"]

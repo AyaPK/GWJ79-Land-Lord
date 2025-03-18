@@ -33,4 +33,5 @@ func on_predelete() -> void:
 		_c.hovered = false
 
 func _on_close_pressed() -> void:
+	Ui.close.play()
 	queue_free()

@@ -11,11 +11,13 @@ func _ready() -> void:
 				c.queue_free()
 
 func _on_yes_pressed() -> void:
+	Ui.boop.play()
 	Globals.hovering_paused = false
 	Property.buy_confirmed.emit()
 	queue_free()
 
 func _on_no_pressed() -> void:
+	Ui.close.play()
 	Globals.hovering_paused = false
 	@warning_ignore("untyped_declaration")
 	for callable in Property.buy_confirmed.get_connections():

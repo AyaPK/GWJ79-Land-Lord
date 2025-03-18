@@ -4,6 +4,11 @@ var createdPackage:PackedScene
 
 const BOMB = preload("res://art/bomb.png")
 const BOMB_SELECTED = preload("res://art/bomb_selected.png")
+@onready var boop: AudioStreamPlayer = $Boop
+@onready var boop_2: AudioStreamPlayer = $Boop2
+@onready var close: AudioStreamPlayer = $Close
+@onready var place: AudioStreamPlayer = $Place
+@onready var cheated: AudioStreamPlayer = $Cheated
 
 @onready var unlocked_icon: TextureRect = $UnlockedContainer/VBoxContainer/UnlockedIcon
 @onready var unlocked_name: Label = $"UnlockedContainer/VBoxContainer/Unlocked Name"
@@ -39,6 +44,7 @@ func unlock_item(item_name: String) -> void:
 	unlock_animation.queue("anim")
 
 func get_item_details() -> void:
+	$Ding.play()
 	var item_name: String = unlock_queue[0]
 	var image: Texture = load(Buyables.buyables[item_name]["icon"])
 	unlocked_icon.texture = image
