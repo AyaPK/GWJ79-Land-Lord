@@ -608,6 +608,7 @@ size = Vector2(64, 64)
 
 [node name="FarmPlot" type="Area2D" groups=["plots"]]
 script = ExtResource("1_oh41f")
+plotname = "Small Farm"
 destroyable = true
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]

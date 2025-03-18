@@ -26,7 +26,7 @@ var buyables: Dictionary = {
 		"cost": 1000,
 		"food_cost": 25,
 		"icon": "res://art/plot_icons/iron_mine.png",
-		"description": "Produces the iron used to upgrade your kingdom!"
+		"description": "Produces the iron used to upgrade your kingdom!\nNearby citizens will come here to work."
 	},
 	"Village": {
 		"path": "res://scenes/plots/village_plot.tscn",

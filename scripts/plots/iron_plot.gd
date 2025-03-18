@@ -12,7 +12,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	super(delta)
 	if progress.value < progress.max_value:
-		progress.value += iron_speed
+		progress.value += iron_speed + _find_adjacent_residences()
 	else:
 		Globals.iron += iron_amount
 		progress.value = 0
@@ -23,3 +23,17 @@ func _input(event: InputEvent) -> void:
 	super(event)
 	if Input.is_action_just_pressed("click") and hovered:
 		pass
+
+func _find_adjacent_residences() -> float:
+	var count: float = 0
+	var center: Vector2 = grid_position
+	for x in range(-1, 2):
+		for y in range(-1, 2):
+			var pos: Vector2 = Vector2(center.x+x, center.y+y)
+			if pos == center or pos not in Globals.grid:
+				continue
+			if Globals.grid[pos] == "Village":
+				count += 1
+			elif Globals.grid[pos] == "Town":
+				count += 2
+	return count

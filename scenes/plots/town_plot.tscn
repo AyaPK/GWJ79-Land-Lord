@@ -605,6 +605,7 @@ size = Vector2(64, 64)
 
 [node name="TownPlot" type="Area2D" groups=["plots"]]
 script = ExtResource("1_autju")
+plotname = "Town"
 destroyable = true
 
 [node name="TileMapLayer3" type="TileMapLayer" parent="."]

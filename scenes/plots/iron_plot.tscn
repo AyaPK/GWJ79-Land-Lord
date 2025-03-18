@@ -626,6 +626,8 @@ size = Vector2(64, 64)
 
 [node name="TemplatePlot" type="Area2D" groups=["plots"]]
 script = ExtResource("1_hdtts")
+plotname = "Iron Mine"
+destroyable = true
 
 [node name="TileMapLayer3" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
