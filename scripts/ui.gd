@@ -13,6 +13,7 @@ const BOMB_SELECTED = preload("res://art/bomb_selected.png")
 @onready var unlocked_icon: TextureRect = $UnlockedContainer/VBoxContainer/UnlockedIcon
 @onready var unlocked_name: Label = $"UnlockedContainer/VBoxContainer/Unlocked Name"
 @onready var unlock_animation: AnimationPlayer = $UnlockedContainer/UnlockAnimation
+@onready var cipher: AudioStreamPlayer = $Cipher
 
 var unlock_queue: Array = []
 

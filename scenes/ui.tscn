@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://ceqtybdnokvnc"]
+[gd_scene load_steps=33 format=3 uid="uid://ceqtybdnokvnc"]
 
 [ext_resource type="Script" uid="uid://dymt5knkf0js5" path="res://scripts/ui.gd" id="1_nt7q6"]
 [ext_resource type="Texture2D" uid="uid://ffongc5ll3hd" path="res://art/coin.png" id="2_x4jx1"]
@@ -21,6 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://x2xp38ulef3j" path="res://audio/sfx/close.wav" id="19_jkdwc"]
 [ext_resource type="AudioStream" uid="uid://pss427j3er64" path="res://audio/sfx/place.wav" id="20_rlppe"]
 [ext_resource type="AudioStream" uid="uid://f8garbdt2iyx" path="res://audio/sfx/cheated.wav" id="21_ycmcx"]
+[ext_resource type="AudioStream" uid="uid://bheagleixe0hx" path="res://audio/music/cipher_chiptune.mp3" id="22_kupmu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4jx1"]
 bg_color = Color(0, 0, 0, 0.231373)
@@ -375,6 +376,9 @@ stream = ExtResource("20_rlppe")
 
 [node name="Cheated" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_ycmcx")
+
+[node name="Cipher" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_kupmu")
 
 [connection signal="mouse_entered" from="DestroyContainer/DestroyButton" to="." method="_on_destroy_button_mouse_entered"]
 [connection signal="mouse_exited" from="DestroyContainer/DestroyButton" to="." method="_on_destroy_button_mouse_exited"]

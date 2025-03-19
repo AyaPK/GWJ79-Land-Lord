@@ -12,7 +12,9 @@ func _ready() -> void:
 				add_child(plot)
 				plot.update_grid_pos()
 				Globals.grid[Vector2(x, y)] = "locked"
+				Ui.cipher.play()
 	elif Globals.load_game:
+		Ui.cipher.stop()
 		Globals.load_game = false
 		Ui.show()
 		await get_tree().process_frame
@@ -23,6 +25,7 @@ func _ready() -> void:
 		parent.add_child(packageInstance)
 		for _c: Plot in get_tree().get_nodes_in_group("plots"):
 			_c.update_grid_pos()
+		Ui.cipher.play()
 
 func generate_locked_tiles(center: Vector2) -> void:
 	for x in range(-1, 2):
