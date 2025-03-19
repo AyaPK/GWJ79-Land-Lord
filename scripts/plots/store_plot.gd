@@ -12,6 +12,8 @@ var click_strength: int = 200
 func _ready() -> void:
 	super()
 	$HoverRect.hide()
+	if Buyables.buyables["Store"]["cost"] == 100:
+		Buyables.buyables["Store"]["cost"] = 500
 	if !Buyables.is_unlocked("Town"):
 		Ui.unlock_item("Town")
 

@@ -726,13 +726,16 @@ text = "Credits"
 [node name="MenuMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_mykxm")
 autoplay = true
+bus = &"Music"
 parameters/looping = true
 
 [node name="ButtonBoop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_tklts")
+bus = &"SFX"
 
 [node name="Ding" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_u26n3")
+bus = &"SFX"
 
 [connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/NewGame" to="." method="_on_new_game_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]

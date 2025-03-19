@@ -47,7 +47,7 @@ var buyables: Dictionary = {
 	"Store": {
 		"path": "res://scenes/plots/store_plot.tscn",
 		"available": false,
-		"cost": 400,
+		"cost": 100,
 		"food_cost": 0,
 		"icon": "res://art/plot_icons/store.png",
 		"description": "Sells food to nearby villages"
@@ -55,7 +55,7 @@ var buyables: Dictionary = {
 	"Small Farm": {
 		"path": "res://scenes/plots/farm_plot.tscn",
 		"available": false,
-		"cost": 500,
+		"cost": 100,
 		"food_cost": 0,
 		"icon": "res://art/plot_icons/farm.png",
 		"description": "Creates food for your citizens\nNeeds water to grow crops"

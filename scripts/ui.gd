@@ -4,6 +4,8 @@ var createdPackage:PackedScene
 
 const BOMB = preload("res://art/bomb.png")
 const BOMB_SELECTED = preload("res://art/bomb_selected.png")
+const CIPHER_CHIPTUNE = preload("res://audio/music/cipher_chiptune.mp3")
+
 @onready var boop: AudioStreamPlayer = $Boop
 @onready var boop_2: AudioStreamPlayer = $Boop2
 @onready var close: AudioStreamPlayer = $Close

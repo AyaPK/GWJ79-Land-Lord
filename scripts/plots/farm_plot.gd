@@ -8,6 +8,8 @@ var food_val: int = 1
 func _ready() -> void:
 	super()
 	$HoverRect.hide()
+	if Buyables.buyables["Small Farm"]["cost"] == 100:
+		Buyables.buyables["Small Farm"]["cost"] = 500
 	if !Buyables.is_unlocked("Iron Mine"):
 		Ui.unlock_item("Iron Mine")
 

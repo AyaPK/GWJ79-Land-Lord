@@ -361,24 +361,31 @@ texture_hover = ExtResource("15_cof4p")
 
 [node name="Ding" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_cof4p")
+bus = &"SFX"
 
 [node name="Boop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_f7tlh")
+bus = &"SFX"
 
 [node name="Boop2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_8k7j3")
+bus = &"SFX"
 
 [node name="Close" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_jkdwc")
+bus = &"SFX"
 
 [node name="Place" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_rlppe")
+bus = &"SFX"
 
 [node name="Cheated" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_ycmcx")
+bus = &"SFX"
 
 [node name="Cipher" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_kupmu")
+bus = &"Music"
 
 [connection signal="mouse_entered" from="DestroyContainer/DestroyButton" to="." method="_on_destroy_button_mouse_entered"]
 [connection signal="mouse_exited" from="DestroyContainer/DestroyButton" to="." method="_on_destroy_button_mouse_exited"]
