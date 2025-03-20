@@ -11,10 +11,10 @@ var resource: String
 
 func _on_buy_button_pressed() -> void:
 	var res: PackedScene = load(resource)
-	var scene: Plot = res.instantiate()
-	get_tree().get_first_node_in_group("main_scene").add_child(scene)
 	var loc: Vector2 = Globals.hovered_tile.grid_position
 	Globals.grid[loc] = item_name.text+""
+	var scene: Plot = res.instantiate()
+	get_tree().get_first_node_in_group("main_scene").add_child(scene)
 	scene.global_position = Vector2(loc.x*64, loc.y*64)
 	scene.update_grid_pos()
 	scene.plotname = item_name.text+""

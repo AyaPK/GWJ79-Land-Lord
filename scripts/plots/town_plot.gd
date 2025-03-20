@@ -3,7 +3,7 @@ class_name PlotTown extends Plot
 func _ready() -> void:
 	super()
 	$HoverRect.hide()
-	Globals.population += 50
+	Globals.population = calc_pop()
 
 func _process(delta: float) -> void:
 	super(delta)
@@ -14,4 +14,13 @@ func _input(event: InputEvent) -> void:
 		pass
 
 func _on_destroy() -> void:
-	Globals.population -= 50
+	Globals.population = calc_pop()
+
+func calc_pop() -> int:
+	var population: int = 0
+	for t in Globals.grid:
+		if Globals.grid[t] == "Village":
+			population += 10
+		if Globals.grid[t] == "Town":
+			population += 10
+	return population
