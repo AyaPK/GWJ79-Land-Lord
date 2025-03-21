@@ -11,13 +11,21 @@ const CIPHER_CHIPTUNE = preload("res://audio/music/cipher_chiptune.mp3")
 @onready var close: AudioStreamPlayer = $Close
 @onready var place: AudioStreamPlayer = $Place
 @onready var cheated: AudioStreamPlayer = $Cheated
+@onready var settings_panel: PanelContainer = $SettingsPanel
 
 @onready var unlocked_icon: TextureRect = $UnlockedContainer/VBoxContainer/UnlockedIcon
 @onready var unlocked_name: Label = $"UnlockedContainer/VBoxContainer/Unlocked Name"
 @onready var unlock_animation: AnimationPlayer = $UnlockedContainer/UnlockAnimation
 @onready var cipher: AudioStreamPlayer = $Cipher
+@onready var musiccheck: CheckBox = $SettingsPanel/VBoxContainer/HBoxContainer/musiccheck
+@onready var sfxcheck: CheckBox = $SettingsPanel/VBoxContainer/HBoxContainer2/sfxcheck
 
 var unlock_queue: Array = []
+
+func _ready() -> void:
+	settings_panel.hide()
+	musiccheck.button_pressed = true
+	sfxcheck.button_pressed = true
 
 func _process(_delta: float) -> void:
 	$HBoxContainer/VBoxContainer/coins/CoinAmount.text = str(Globals.money)
@@ -67,3 +75,15 @@ func _on_save_pressed() -> void:
 func _on_upgrades_pressed() -> void:
 	var popup: UpgradePopup = Property.UPGRADE_POPUP.instantiate()
 	add_child(popup)
+
+func _on_settings_button_pressed() -> void:
+	settings_panel.show()
+
+func _on_button_pressed() -> void:
+	settings_panel.hide()
+
+func _on_musiccheck_toggled(toggled_on: bool) -> void:
+	AudioServer.set_bus_mute(2, !toggled_on)
+
+func _on_sfxcheck_toggled(toggled_on: bool) -> void:
+	AudioServer.set_bus_mute(1, !toggled_on)
