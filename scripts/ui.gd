@@ -73,18 +73,21 @@ func _on_save_pressed() -> void:
 	ResourceSaver.save(createdPackage, SaveManager.saveFile)
 
 func _on_upgrades_pressed() -> void:
-	var popup: UpgradePopup = Property.UPGRADE_POPUP.instantiate()
-	add_child(popup)
+	if !Globals.hovering_paused:
+		var popup: UpgradePopup = Property.UPGRADE_POPUP.instantiate()
+		add_child(popup)
 
 func _on_settings_button_pressed() -> void:
-	settings_panel.show()
-	Globals.hovering_paused = true
-	Globals.zooming_paused = true
+	if !Globals.hovering_paused:
+		settings_panel.show()
+		Globals.hovering_paused = true
+		Globals.zooming_paused = true
 
 func _on_button_pressed() -> void:
-	settings_panel.hide()
-	Globals.hovering_paused = false
-	Globals.zooming_paused = false
+	if !Globals.hovering_paused:
+		settings_panel.hide()
+		Globals.hovering_paused = false
+		Globals.zooming_paused = false
 
 func _on_musiccheck_toggled(toggled_on: bool) -> void:
 	AudioServer.set_bus_mute(2, !toggled_on)
