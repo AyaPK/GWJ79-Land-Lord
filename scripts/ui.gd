@@ -27,6 +27,8 @@ func _ready() -> void:
 	settings_panel.hide()
 	musiccheck.button_pressed = true
 	sfxcheck.button_pressed = true
+	Globals.hovering_paused = true
+	Globals.zooming_paused = true
 
 func _process(_delta: float) -> void:
 	$HBoxContainer/VBoxContainer/coins/CoinAmount.text = str(Globals.money)
@@ -99,3 +101,5 @@ func _on_sfxcheck_toggled(toggled_on: bool) -> void:
 
 func _on_closetutorial_pressed() -> void:
 	tutorial_panel.hide()
+	Globals.hovering_paused = false
+	Globals.zooming_paused = false

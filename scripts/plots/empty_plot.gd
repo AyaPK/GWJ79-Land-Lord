@@ -25,4 +25,5 @@ func _on_button_pressed() -> void:
 	Ui.boop_2.play()
 	Globals.hovering_paused = true
 	var store: PanelContainer = Property.STORE_POPUP.instantiate()
+	Globals.hovered_tile = self
 	Ui.add_child(store)
