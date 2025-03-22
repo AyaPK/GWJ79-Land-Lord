@@ -27,7 +27,9 @@ func _on_buy_button_pressed() -> void:
 			if ug["name"] == unlock:
 				ug["available"] = true
 	Ui.cheated.play()
+	Ui.upgrade_bought.emit()
 	queue_free()
+	await tree_exited
 
 func increase_castle_speed(amount: int) -> void:
 	Property.upgrades["Castle"]["speed"] += amount

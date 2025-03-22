@@ -23,6 +23,9 @@ const CIPHER_CHIPTUNE = preload("res://audio/music/cipher_chiptune.mp3")
 
 var unlock_queue: Array = []
 
+@warning_ignore("unused_signal")
+signal upgrade_bought
+
 func _ready() -> void:
 	settings_panel.hide()
 	musiccheck.button_pressed = true

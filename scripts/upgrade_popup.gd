@@ -13,6 +13,7 @@ func _ready() -> void:
 	var close_button: Button = CLOSE_BUTTON.instantiate()
 	close_button.pressed.connect(_on_close_pressed)
 	v_box_container.add_child(close_button)
+	Ui.upgrade_bought.connect(_refresh_panels)
 
 func _populate_upgrades() -> void:
 	for upgrade: Dictionary in Buyables.upgrades:
@@ -39,3 +40,10 @@ func on_predelete() -> void:
 func _on_close_pressed() -> void:
 	Ui.close.play()
 	queue_free()
+
+func _refresh_panels() -> void:
+	for _c in items.get_children():
+		if _c:
+			_c.queue_free()
+			await _c.tree_exited
+	_populate_upgrades()
