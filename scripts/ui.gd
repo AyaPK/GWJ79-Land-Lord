@@ -34,11 +34,12 @@ func _process(_delta: float) -> void:
 	$HBoxContainer/VBoxContainer/iron/IronAmount.text = str(Globals.iron)
 
 func _on_destroy_button_pressed() -> void:
-	Globals.destroy_mode = !Globals.destroy_mode
-	if Globals.destroy_mode:
-		$DestroyContainer/DestroyButton/Bomb.texture = BOMB_SELECTED
-	else:
-		$DestroyContainer/DestroyButton/Bomb.texture = BOMB
+	if !Globals.hovering_paused:
+		Globals.destroy_mode = !Globals.destroy_mode
+		if Globals.destroy_mode:
+			$DestroyContainer/DestroyButton/Bomb.texture = BOMB_SELECTED
+		else:
+			$DestroyContainer/DestroyButton/Bomb.texture = BOMB
 
 
 func _on_destroy_button_mouse_entered() -> void:
@@ -84,10 +85,9 @@ func _on_settings_button_pressed() -> void:
 		Globals.zooming_paused = true
 
 func _on_button_pressed() -> void:
-	if !Globals.hovering_paused:
-		settings_panel.hide()
-		Globals.hovering_paused = false
-		Globals.zooming_paused = false
+	settings_panel.hide()
+	Globals.hovering_paused = false
+	Globals.zooming_paused = false
 
 func _on_musiccheck_toggled(toggled_on: bool) -> void:
 	AudioServer.set_bus_mute(2, !toggled_on)
