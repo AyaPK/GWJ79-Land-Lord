@@ -8,6 +8,7 @@ const MAIN = preload("res://scenes/main.tscn")
 @onready var sfxcheck: CheckBox = $CanvasLayer/SettingsPanel/VBoxContainer/HBoxContainer2/sfxcheck
 @onready var button: Button = $CanvasLayer/SettingsPanel/VBoxContainer/Button
 @onready var v_box_container: VBoxContainer = $CanvasLayer/VBoxContainer
+@onready var credits_container: PanelContainer = $CanvasLayer/CreditsContainer
 
 func _ready() -> void:
 	Ui.hide()
@@ -53,3 +54,11 @@ func _on_sfxcheck_toggled(toggled_on: bool) -> void:
 
 func _on_musiccheck_toggled(toggled_on: bool) -> void:
 	AudioServer.set_bus_mute(2, !toggled_on)
+
+func _on_closecredits_pressed() -> void:
+	credits_container.hide()
+	v_box_container.show()
+
+func _on_credits_pressed() -> void:
+	credits_container.show()
+	v_box_container.hide()

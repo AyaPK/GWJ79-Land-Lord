@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://d3ix0v2fl0xaa"]
+[gd_scene load_steps=24 format=4 uid="uid://d3ix0v2fl0xaa"]
 
 [ext_resource type="Texture2D" uid="uid://5bgh323bt70y" path="res://art/tiny_dungeon.png" id="1_dc4i4"]
 [ext_resource type="Script" uid="uid://cq0gwf8e6lebr" path="res://scripts/title_screen.gd" id="1_e54dn"]
@@ -651,6 +651,13 @@ texture_margin_top = 20.0
 texture_margin_right = 20.0
 texture_margin_bottom = 20.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mynnq"]
+texture = ExtResource("7_3yumr")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
 [node name="TitleScreen" type="Node2D"]
 script = ExtResource("1_e54dn")
 
@@ -797,6 +804,32 @@ button_pressed = true
 [node name="Button" parent="CanvasLayer/SettingsPanel/VBoxContainer" instance=ExtResource("14_mynnq")]
 layout_mode = 2
 
+[node name="CreditsContainer" type="PanelContainer" parent="CanvasLayer"]
+visible = false
+offset_left = 369.0
+offset_top = 201.0
+offset_right = 797.0
+offset_bottom = 491.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_mynnq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CreditsContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/CreditsContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 21
+text = "Made for the Godot WildJam 79 by Aya
+
+Music: Kevin Macleod, JenTheFox
+
+SFX: Aya
+
+Graphics: Kenney.nl, Aya"
+
+[node name="closecredits" parent="CanvasLayer/CreditsContainer/VBoxContainer" instance=ExtResource("14_mynnq")]
+layout_mode = 2
+
 [node name="MenuMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_mykxm")
 autoplay = true
@@ -816,7 +849,9 @@ bus = &"SFX"
 [connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/LoadGame" to="." method="_on_load_game_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/LoadGame" to="." method="_on_load_game_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/Credits" to="." method="_on_credits_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="CanvasLayer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="toggled" from="CanvasLayer/SettingsPanel/VBoxContainer/HBoxContainer/musiccheck" to="." method="_on_musiccheck_toggled"]
 [connection signal="toggled" from="CanvasLayer/SettingsPanel/VBoxContainer/HBoxContainer2/sfxcheck" to="." method="_on_sfxcheck_toggled"]
 [connection signal="pressed" from="CanvasLayer/SettingsPanel/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/CreditsContainer/VBoxContainer/closecredits" to="." method="_on_closecredits_pressed"]
