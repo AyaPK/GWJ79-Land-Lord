@@ -104,3 +104,10 @@ func _on_closetutorial_pressed() -> void:
 	tutorial_panel.hide()
 	Globals.hovering_paused = false
 	Globals.zooming_paused = false
+
+func _on_save_mouse_entered() -> void:
+	Globals.hovering_paused = true
+	Globals.hovered_tile.hovered = false
+
+func _on_save_mouse_exited() -> void:
+	Globals.hovering_paused = false

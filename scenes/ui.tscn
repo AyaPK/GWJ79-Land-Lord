@@ -524,6 +524,8 @@ layout_mode = 2
 [connection signal="mouse_entered" from="DestroyContainer/DestroyButton" to="." method="_on_destroy_button_mouse_entered"]
 [connection signal="mouse_exited" from="DestroyContainer/DestroyButton" to="." method="_on_destroy_button_mouse_exited"]
 [connection signal="pressed" from="DestroyContainer/DestroyButton" to="." method="_on_destroy_button_pressed"]
+[connection signal="mouse_entered" from="save" to="." method="_on_save_mouse_entered"]
+[connection signal="mouse_exited" from="save" to="." method="_on_save_mouse_exited"]
 [connection signal="pressed" from="save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="upgrades" to="." method="_on_upgrades_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
