@@ -817,7 +817,6 @@ button_pressed = true
 layout_mode = 2
 
 [node name="CreditsContainer" type="PanelContainer" parent="CanvasLayer"]
-visible = false
 offset_left = 369.0
 offset_top = 201.0
 offset_right = 797.0
@@ -837,7 +836,10 @@ Music: Kevin Macleod, JenTheFox
 
 SFX: Aya
 
-Graphics: Kenney.nl, Aya"
+Graphics: Kenney.nl, Aya
+
+Playtesters: Laura, Kat, Sam, Rin
+"
 
 [node name="closecredits" parent="CanvasLayer/CreditsContainer/VBoxContainer" instance=ExtResource("14_mynnq")]
 layout_mode = 2
