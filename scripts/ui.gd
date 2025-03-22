@@ -77,6 +77,7 @@ func _on_save_pressed() -> void:
 	ResourceSaver.save(createdPackage, SaveManager.saveFile)
 
 func _on_upgrades_pressed() -> void:
+	Ui.boop_2.play()
 	if !Globals.hovering_paused:
 		var popup: UpgradePopup = Property.UPGRADE_POPUP.instantiate()
 		add_child(popup)
@@ -99,6 +100,7 @@ func _on_sfxcheck_toggled(toggled_on: bool) -> void:
 	AudioServer.set_bus_mute(1, !toggled_on)
 
 func _on_closetutorial_pressed() -> void:
+	Ui.close.play()
 	tutorial_panel.hide()
 	Globals.hovering_paused = false
 	Globals.zooming_paused = false

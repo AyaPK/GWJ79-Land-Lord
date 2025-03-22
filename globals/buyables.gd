@@ -28,6 +28,14 @@ var buyables: Dictionary = {
 		"icon": "res://art/plot_icons/iron_mine.png",
 		"description": "Produces the iron used to upgrade your kingdom!\nNearby citizens will come here to work."
 	},
+	"Gold Mine": {
+		"path": "res://scenes/plots/gold_plot.tscn",
+		"available": false,
+		"cost": 500,
+		"food_cost": 0,
+		"icon": "res://art/plot_icons/gold_mine.png",
+		"description": "Mines gold to spend on more stuff!\nNearby citizens will come here to work."
+	},
 	"Village": {
 		"path": "res://scenes/plots/village_plot.tscn",
 		"available": false,

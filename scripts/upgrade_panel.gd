@@ -26,6 +26,7 @@ func _on_buy_button_pressed() -> void:
 		for ug: Dictionary in Buyables.upgrades:
 			if ug["name"] == unlock:
 				ug["available"] = true
+	Ui.cheated.play()
 	queue_free()
 
 func increase_castle_speed(amount: int) -> void:
@@ -45,3 +46,6 @@ func increase_store_speed(amount: int) -> void:
 
 func increase_store_val(amount: int) -> void:
 	Property.upgrades["Store"]["val"] += amount
+
+func _on_buy_button_mouse_entered() -> void:
+	Ui.boop.play()
