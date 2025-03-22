@@ -742,8 +742,14 @@ theme_override_font_sizes/font_size = 40
 text = "Credits"
 
 [node name="Godotwildcards" type="Sprite2D" parent="CanvasLayer/VBoxContainer"]
-position = Vector2(-316, 266)
-scale = Vector2(0.581871, 0.581871)
+modulate = Color(0, 0, 0, 0.458824)
+position = Vector2(-265.244, 226.75)
+scale = Vector2(0.758772, 0.758772)
+texture = ExtResource("9_e8tpv")
+
+[node name="Godotwildcards2" type="Sprite2D" parent="CanvasLayer/VBoxContainer"]
+position = Vector2(-271.244, 219.75)
+scale = Vector2(0.758772, 0.758772)
 texture = ExtResource("9_e8tpv")
 
 [node name="SettingsButton" type="TextureButton" parent="CanvasLayer"]
