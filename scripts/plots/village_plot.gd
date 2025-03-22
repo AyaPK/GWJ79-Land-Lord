@@ -26,5 +26,5 @@ func calc_pop() -> int:
 		if Globals.grid[t] == "Village":
 			population += 10
 		if Globals.grid[t] == "Town":
-			population += 10
+			population += 50
 	return population
