@@ -78,9 +78,13 @@ func _on_upgrades_pressed() -> void:
 
 func _on_settings_button_pressed() -> void:
 	settings_panel.show()
+	Globals.hovering_paused = true
+	Globals.zooming_paused = true
 
 func _on_button_pressed() -> void:
 	settings_panel.hide()
+	Globals.hovering_paused = false
+	Globals.zooming_paused = false
 
 func _on_musiccheck_toggled(toggled_on: bool) -> void:
 	AudioServer.set_bus_mute(2, !toggled_on)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://d3ix0v2fl0xaa"]
+[gd_scene load_steps=23 format=4 uid="uid://d3ix0v2fl0xaa"]
 
 [ext_resource type="Texture2D" uid="uid://5bgh323bt70y" path="res://art/tiny_dungeon.png" id="1_dc4i4"]
 [ext_resource type="Script" uid="uid://cq0gwf8e6lebr" path="res://scripts/title_screen.gd" id="1_e54dn"]
@@ -11,6 +11,9 @@
 [ext_resource type="AudioStream" uid="uid://dgxg5quaw0qg4" path="res://audio/music/sillyfun.mp3" id="9_mykxm"]
 [ext_resource type="AudioStream" uid="uid://bf10gqqlbgd2o" path="res://audio/sfx/boop.wav" id="10_tklts"]
 [ext_resource type="AudioStream" uid="uid://y4gc3n7hbmxc" path="res://audio/sfx/dinhg.wav" id="11_u26n3"]
+[ext_resource type="Texture2D" uid="uid://dysx2j1das16y" path="res://art/settings.png" id="12_frs5l"]
+[ext_resource type="Texture2D" uid="uid://t6ffo1hmm32y" path="res://art/settings_hovered.png" id="13_mynnq"]
+[ext_resource type="PackedScene" uid="uid://c2fn2wt7cjqwx" path="res://scenes/popups/close_button.tscn" id="14_mynnq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tklts"]
 texture = ExtResource("1_dc4i4")
@@ -641,6 +644,13 @@ texture_margin_top = 20.0
 texture_margin_right = 20.0
 texture_margin_bottom = 20.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e8tpv"]
+texture = ExtResource("7_3yumr")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
 [node name="TitleScreen" type="Node2D"]
 script = ExtResource("1_e54dn")
 
@@ -689,9 +699,9 @@ theme_override_font_sizes/font_size = 80
 text = "Land Lord"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
-offset_left = 452.0
+offset_left = 477.0
 offset_top = 286.0
-offset_right = 702.0
+offset_right = 727.0
 offset_bottom = 564.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -723,6 +733,69 @@ theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 40
 text = "Credits"
 
+[node name="SettingsButton" type="TextureButton" parent="CanvasLayer"]
+z_index = 13
+offset_left = 1062.0
+offset_top = 17.0
+offset_right = 1078.0
+offset_bottom = 33.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("12_frs5l")
+texture_hover = ExtResource("13_mynnq")
+
+[node name="SettingsPanel" type="PanelContainer" parent="CanvasLayer"]
+offset_left = 352.0
+offset_top = 201.0
+offset_right = 821.0
+offset_bottom = 452.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_e8tpv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/SettingsPanel"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/SettingsPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 50
+text = "Settings"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/SettingsPanel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/SettingsPanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 30
+text = "Music"
+
+[node name="musiccheck" type="CheckBox" parent="CanvasLayer/SettingsPanel/VBoxContainer/HBoxContainer"]
+modulate = Color(0.314316, 0.314316, 0.314316, 1)
+layout_mode = 2
+button_pressed = true
+keep_pressed_outside = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/SettingsPanel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/SettingsPanel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 30
+text = "SFX"
+
+[node name="sfxcheck" type="CheckBox" parent="CanvasLayer/SettingsPanel/VBoxContainer/HBoxContainer2"]
+modulate = Color(0.314316, 0.314316, 0.314316, 1)
+layout_mode = 2
+button_pressed = true
+
+[node name="Button" parent="CanvasLayer/SettingsPanel/VBoxContainer" instance=ExtResource("14_mynnq")]
+layout_mode = 2
+
 [node name="MenuMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_mykxm")
 autoplay = true
@@ -742,3 +815,7 @@ bus = &"SFX"
 [connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/LoadGame" to="." method="_on_load_game_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/LoadGame" to="." method="_on_load_game_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/Credits" to="." method="_on_credits_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="toggled" from="CanvasLayer/SettingsPanel/VBoxContainer/HBoxContainer/musiccheck" to="." method="_on_musiccheck_toggled"]
+[connection signal="toggled" from="CanvasLayer/SettingsPanel/VBoxContainer/HBoxContainer2/sfxcheck" to="." method="_on_sfxcheck_toggled"]
+[connection signal="pressed" from="CanvasLayer/SettingsPanel/VBoxContainer/Button" to="." method="_on_button_pressed"]
