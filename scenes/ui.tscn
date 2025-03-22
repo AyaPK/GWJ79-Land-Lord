@@ -469,10 +469,10 @@ button_pressed = true
 layout_mode = 2
 
 [node name="TutorialPanel" type="PanelContainer" parent="."]
-offset_left = 228.0
+offset_left = 372.0
 offset_top = 29.0
-offset_right = 558.0
-offset_bottom = 593.0
+offset_right = 897.0
+offset_bottom = 596.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_0tsab")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TutorialPanel"]
@@ -488,31 +488,34 @@ text = "Welcome to your Kingdom, my lord!"
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "
-It's not much to look at right now...
-But soon it will be a mighty kingdom
-spreading out across the land!"
+It's not much to look at right now... But soon it will be a
+mighty kingdom spreading out across the land!"
 
 [node name="Label3" type="Label" parent="TutorialPanel/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "
-First, we need a castle.
-Buy some land and build a castle
-on it!
-But without citizens, there is
-nobody to tax... So we won't make
-any more money."
+First, we need a castle. Buy some land and build a castle
+on it! But without citizens, there is nobody to tax...
+So we won't make any more money."
 
 [node name="Label4" type="Label" parent="TutorialPanel/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "
-After building your castle, buy
-some more land and then build
-your first village. Your castle
+After building your castle, buy some more land
+and then build your first village. Your castle
 will then have citizens to tax.
+"
 
-Good luck!
+[node name="Label5" type="Label" parent="TutorialPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Make sure to read the description on your new property,
+some pieces of land will affect others near them. Find
+a layout that works for you.
+
+Good luck, my liege!
 "
 
 [node name="closetutorial" parent="TutorialPanel/VBoxContainer" instance=ExtResource("26_gglip")]

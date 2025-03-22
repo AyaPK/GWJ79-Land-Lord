@@ -98,7 +98,6 @@ func _on_musiccheck_toggled(toggled_on: bool) -> void:
 func _on_sfxcheck_toggled(toggled_on: bool) -> void:
 	AudioServer.set_bus_mute(1, !toggled_on)
 
-
 func _on_closetutorial_pressed() -> void:
 	tutorial_panel.hide()
 	Globals.hovering_paused = false
