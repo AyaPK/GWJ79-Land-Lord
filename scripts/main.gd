@@ -43,7 +43,7 @@ func _on_node_success() -> void:
 	Ui.cheated.play()
 	Globals.money += 10000
 	Globals.food += 200
-	Globals.iron += 200
+	Globals.iron += 1000
 
 func play_explosion(gridpos: Vector2) -> void:
 	var explosion: GPUParticles2D = EXPLOSION.instantiate()

@@ -1,21 +1,17 @@
-class_name FarmPlot extends Plot
+class_name LargeFarmPlot extends Plot
 
+@onready var output_host: OutputAnim = $output_host
 @onready var progress: TextureProgressBar = $progress
 
-var food_speed: int = 1
-var food_val: int = 1
+var food_speed: int = 3
+var food_val: int = 5
 
 func _ready() -> void:
 	super()
 	$HoverRect.hide()
-	if Buyables.buyables["Small Farm"]["cost"] == 100:
-		Buyables.buyables["Small Farm"]["cost"] = 500
-	if !Buyables.is_unlocked("Iron Mine"):
-		Ui.unlock_item("Iron Mine")
-	if !Buyables.is_unlocked("Large Farm"):
-		Ui.unlock_item("Large Farm")
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	super(delta)
 	if progress.value < progress.max_value:
 		progress.value += food_speed + Property.upgrades["Farm"]["speed"]
 	else:
@@ -29,6 +25,12 @@ func _input(event: InputEvent) -> void:
 	super(event)
 	if Input.is_action_just_pressed("click") and hovered:
 		pass
+
+func _on_build() -> void:
+	pass
+
+func _on_destroy() -> void:
+	pass
 
 func _find_adjacent_lakes() -> int:
 	var count: int = 0

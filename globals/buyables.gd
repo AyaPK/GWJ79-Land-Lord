@@ -59,7 +59,15 @@ var buyables: Dictionary = {
 		"food_cost": 0,
 		"icon": "res://art/plot_icons/farm.png",
 		"description": "Creates food for your citizens\nNeeds water to grow crops"
-	}
+	},
+	"Large Farm": {
+		"path": "res://scenes/plots/large_farm.tscn",
+		"available": false,
+		"cost": 1000,
+		"food_cost": 0,
+		"icon": "res://art/plot_icons/large_farm.png",
+		"description": "Creates a lot of food for your citizens\nNeeds water to grow crops"
+	},
 }
 
 var upgrades: Array = [
