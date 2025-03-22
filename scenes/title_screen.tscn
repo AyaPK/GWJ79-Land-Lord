@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://d3ix0v2fl0xaa"]
+[gd_scene load_steps=25 format=4 uid="uid://d3ix0v2fl0xaa"]
 
 [ext_resource type="Texture2D" uid="uid://5bgh323bt70y" path="res://art/tiny_dungeon.png" id="1_dc4i4"]
 [ext_resource type="Script" uid="uid://cq0gwf8e6lebr" path="res://scripts/title_screen.gd" id="1_e54dn"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bqx7xdn4sxuiw" path="res://art/tiny_transition.png" id="5_mykxm"]
 [ext_resource type="Texture2D" uid="uid://yh3mub4ae71d" path="res://art/menuRect.png" id="7_3yumr"]
 [ext_resource type="Theme" uid="uid://dueaa2r2f1b70" path="res://themes/button.tres" id="8_cs5ya"]
+[ext_resource type="Texture2D" uid="uid://d0ofg70rx7mre" path="res://art/godotwildcards.png" id="9_e8tpv"]
 [ext_resource type="AudioStream" uid="uid://dgxg5quaw0qg4" path="res://audio/music/sillyfun.mp3" id="9_mykxm"]
 [ext_resource type="AudioStream" uid="uid://bf10gqqlbgd2o" path="res://audio/sfx/boop.wav" id="10_tklts"]
 [ext_resource type="AudioStream" uid="uid://y4gc3n7hbmxc" path="res://audio/sfx/dinhg.wav" id="11_u26n3"]
@@ -739,6 +740,11 @@ theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 40
 text = "Credits"
+
+[node name="Godotwildcards" type="Sprite2D" parent="CanvasLayer/VBoxContainer"]
+position = Vector2(-316, 266)
+scale = Vector2(0.581871, 0.581871)
+texture = ExtResource("9_e8tpv")
 
 [node name="SettingsButton" type="TextureButton" parent="CanvasLayer"]
 z_index = 13
