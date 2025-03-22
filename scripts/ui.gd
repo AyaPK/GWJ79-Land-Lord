@@ -12,6 +12,7 @@ const CIPHER_CHIPTUNE = preload("res://audio/music/cipher_chiptune.mp3")
 @onready var place: AudioStreamPlayer = $Place
 @onready var cheated: AudioStreamPlayer = $Cheated
 @onready var settings_panel: PanelContainer = $SettingsPanel
+@onready var tutorial_panel: PanelContainer = $TutorialPanel
 
 @onready var unlocked_icon: TextureRect = $UnlockedContainer/VBoxContainer/UnlockedIcon
 @onready var unlocked_name: Label = $"UnlockedContainer/VBoxContainer/Unlocked Name"
@@ -94,3 +95,7 @@ func _on_musiccheck_toggled(toggled_on: bool) -> void:
 
 func _on_sfxcheck_toggled(toggled_on: bool) -> void:
 	AudioServer.set_bus_mute(1, !toggled_on)
+
+
+func _on_closetutorial_pressed() -> void:
+	tutorial_panel.hide()

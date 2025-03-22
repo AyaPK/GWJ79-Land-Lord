@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://ceqtybdnokvnc"]
+[gd_scene load_steps=39 format=3 uid="uid://ceqtybdnokvnc"]
 
 [ext_resource type="Script" uid="uid://dymt5knkf0js5" path="res://scripts/ui.gd" id="1_nt7q6"]
 [ext_resource type="Texture2D" uid="uid://ffongc5ll3hd" path="res://art/coin.png" id="2_x4jx1"]
@@ -164,6 +164,13 @@ _data = {
 }
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gglip"]
+texture = ExtResource("25_sesyt")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0tsab"]
 texture = ExtResource("25_sesyt")
 texture_margin_left = 20.0
 texture_margin_top = 20.0
@@ -461,6 +468,56 @@ button_pressed = true
 [node name="Button" parent="SettingsPanel/VBoxContainer" instance=ExtResource("26_gglip")]
 layout_mode = 2
 
+[node name="TutorialPanel" type="PanelContainer" parent="."]
+offset_left = 228.0
+offset_top = 29.0
+offset_right = 558.0
+offset_bottom = 593.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_0tsab")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TutorialPanel"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TutorialPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 18
+text = "Welcome to your Kingdom, my lord!"
+
+[node name="Label2" type="Label" parent="TutorialPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "
+It's not much to look at right now...
+But soon it will be a mighty kingdom
+spreading out across the land!"
+
+[node name="Label3" type="Label" parent="TutorialPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "
+First, we need a castle.
+Buy some land and build a castle
+on it!
+But without citizens, there is
+nobody to tax... So we won't make
+any more money."
+
+[node name="Label4" type="Label" parent="TutorialPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "
+After building your castle, buy
+some more land and then build
+your first village. Your castle
+will then have citizens to tax.
+
+Good luck!
+"
+
+[node name="closetutorial" parent="TutorialPanel/VBoxContainer" instance=ExtResource("26_gglip")]
+layout_mode = 2
+
 [connection signal="mouse_entered" from="DestroyContainer/DestroyButton" to="." method="_on_destroy_button_mouse_entered"]
 [connection signal="mouse_exited" from="DestroyContainer/DestroyButton" to="." method="_on_destroy_button_mouse_exited"]
 [connection signal="pressed" from="DestroyContainer/DestroyButton" to="." method="_on_destroy_button_pressed"]
@@ -470,3 +527,4 @@ layout_mode = 2
 [connection signal="toggled" from="SettingsPanel/VBoxContainer/HBoxContainer/musiccheck" to="." method="_on_musiccheck_toggled"]
 [connection signal="toggled" from="SettingsPanel/VBoxContainer/HBoxContainer2/sfxcheck" to="." method="_on_sfxcheck_toggled"]
 [connection signal="pressed" from="SettingsPanel/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="TutorialPanel/VBoxContainer/closetutorial" to="." method="_on_closetutorial_pressed"]

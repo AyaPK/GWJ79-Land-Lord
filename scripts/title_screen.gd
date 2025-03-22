@@ -4,9 +4,9 @@ const MAIN = preload("res://scenes/main.tscn")
 
 @onready var load_game: Button = $CanvasLayer/VBoxContainer/LoadGame
 @onready var settings_panel: PanelContainer = $CanvasLayer/SettingsPanel
-@onready var musiccheck: CheckBox = $SettingsPanel/VBoxContainer/HBoxContainer/musiccheck
-@onready var sfxcheck: CheckBox = $SettingsPanel/VBoxContainer/HBoxContainer2/sfxcheck
-@onready var button: Button = $SettingsPanel/VBoxContainer/Button
+@onready var musiccheck: CheckBox = $CanvasLayer/SettingsPanel/VBoxContainer/HBoxContainer/musiccheck
+@onready var sfxcheck: CheckBox = $CanvasLayer/SettingsPanel/VBoxContainer/HBoxContainer2/sfxcheck
+@onready var button: Button = $CanvasLayer/SettingsPanel/VBoxContainer/Button
 @onready var v_box_container: VBoxContainer = $CanvasLayer/VBoxContainer
 
 func _ready() -> void:
@@ -15,6 +15,7 @@ func _ready() -> void:
 	if !check:
 		load_game.disabled = true
 		return
+	settings_panel.hide()
 
 func _on_new_game_pressed() -> void:
 	$Ding.play()

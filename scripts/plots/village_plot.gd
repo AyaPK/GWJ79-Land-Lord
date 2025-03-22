@@ -22,7 +22,7 @@ func _on_destroy() -> void:
 
 func calc_pop() -> int:
 	var population: int = 0
-	for t in Globals.grid:
+	for t: Vector2 in Globals.grid:
 		if Globals.grid[t] == "Village":
 			population += 10
 		if Globals.grid[t] == "Town":
