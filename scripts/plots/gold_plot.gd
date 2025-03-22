@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 	if progress.value < progress.max_value:
 		progress.value += gold_speed
 	else:
-		Globals.iron += gold_amount * _find_adjacent_residences()
+		Globals.money += gold_amount * _find_adjacent_residences()
 		progress.value = 0
 		$output_host.amount.text = "+"+str(int(gold_amount * _find_adjacent_residences()))
 		$output_host.animation.play("anim")
