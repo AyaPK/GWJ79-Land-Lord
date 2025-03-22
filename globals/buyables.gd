@@ -71,8 +71,8 @@ var buyables: Dictionary = {
 	"Large Farm": {
 		"path": "res://scenes/plots/large_farm.tscn",
 		"available": false,
-		"cost": 1000,
-		"food_cost": 0,
+		"cost": 5000,
+		"food_cost": 100,
 		"icon": "res://art/plot_icons/large_farm.png",
 		"description": "Creates a lot of food for your citizens\nNeeds water to grow crops"
 	},
