@@ -17,14 +17,14 @@ func _process(_delta: float) -> void:
 	if !Globals.hovering_paused:
 		$HoverRect.visible = hovered
 	if hovered:
-		Globals.current_cost = floori(100 * pow(1.25, Globals.owned))
+		Globals.current_cost = floori(100 * pow(1.18, Globals.owned))
 		$cost/Label.text = str(Globals.current_cost)
 		$cost.show()
 	else:
 		$cost.hide()
 
 func _buy() -> void:
-	Globals.current_cost = floori(100 * pow(1.25, Globals.owned))
+	Globals.current_cost = floori(100 * pow(1.18, Globals.owned))
 	if Globals.money >= Globals.current_cost:
 		Globals.hovering_paused = true
 		hovered = false
