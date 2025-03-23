@@ -20,6 +20,7 @@ func _on_buy_button_pressed() -> void:
 	scene.plotname = item_name.text+""
 	Globals.hovered_tile.queue_free()
 	_take_money()
+	Globals.population = calc_pop()
 	for node in get_tree().get_nodes_in_group("store_scenes"):
 		node.queue_free()
 	Ui.place.play()
@@ -41,3 +42,12 @@ func _take_money() -> void:
 
 func _on_buy_button_mouse_entered() -> void:
 	Ui.boop.play()
+
+func calc_pop() -> int:
+	var population: int = 0
+	for t: Vector2 in Globals.grid:
+		if Globals.grid[t] == "Village":
+			population += 10
+		if Globals.grid[t] == "Town":
+			population += 50
+	return population
